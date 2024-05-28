@@ -28,11 +28,37 @@ def imprimir_10_veces_eco():
         contador += 1
 imprimir_10_veces_eco()
 
+# --- EJM 4 ---
 
+def cuenta_regresiva(numero:int):
+    x = numero
+    print(x)
+    while x > 1 :
+        print(x-1)
+        x -= 1
+    print("Despegue!!!")
+cuenta_regresiva(6)
 
+# --- EJM 5 ---
 
+# añoLlegada < añoPartida
+def viaje_en_el_tiempo(añoPartida:int,añoLlegada:int):
 
+    print(f"Año actual:{añoPartida}")
+    while añoPartida > añoLlegada :
+          print(f"Viajo un año al pasado, estamos en el año:{añoPartida - 1}")
+          añoPartida -= 1 
+viaje_en_el_tiempo(2010,2000)
 
+# --- EJM 6 ---
+x = 384
+def viaje_en_el_tiempo_384aC(añoPartida:int,x):
+    
+    print(f"Año actual:{añoPartida}")
+    while añoPartida >= x :
+          print(f"Viajo un año al pasado, estamos en el año:{añoPartida - 20}")
+          añoPartida -= 20 
+viaje_en_el_tiempo_384aC(500,x)
 
 
 
