@@ -12,6 +12,7 @@ reemplaza_pares_por_cero(lista)
 print(lista)
 
 """
+-- ASI NO SE HACE (Ojo)
 s = [1,2,3,4,5,6]
 print(f"lista:{s}")
 s = [1,2,3,4,5,6]
