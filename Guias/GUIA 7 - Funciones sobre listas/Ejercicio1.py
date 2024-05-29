@@ -73,18 +73,52 @@ def palabras_mayor_a_7(lista:list[str])->bool:
 lista = ["hola","camote","ballenas"]
 print(palabras_mayor_a_7(lista)) # res = True   
 
+# --- EJM 6 ---
+
+
+def texto_reverso(texto:str)->str:
+    nuevoTexto:str = ""
+    for i in range(len(texto)-1,-1,-1):
+        nuevoTexto += texto[i]
+    return nuevoTexto
+print(texto_reverso("anita"))
+
+
+
+def es_palindromo(texto:str)->bool:
+    textoReverso:str = texto_reverso(texto) 
+    if texto == textoReverso:
+        return True
+    return False
+
+print(es_palindromo("salas"))
+
+#roma
+
+"""
+def es_palindromo(texto:str)->bool:
+    primerIndice:int = 0
+    ultimoIndice = len(texto) - 1
+    textoReverso:str = texto_reverso(texto) 
+    contador:int = 0
+    while contador <= (len(texto))-1:
+          if texto[primerIndice] == textoReverso[ultimoIndice]:    
+             contador += 1
+             primerIndice += 1
+             ultimoIndice -= 1
+          else:
+              return False
+    return True
+print(es_palindromo("palabra"))
+
+
+"""
 
 
 
 
 
-
-
-
-
-
-
-
+            
 
 
 
