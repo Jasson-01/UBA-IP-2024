@@ -58,10 +58,24 @@ def existe_palabra(palabra:str,nombre_archivo:str)->bool:
     archivo.close()
     return False
 
-palabra:str = "where"
-print(existe_palabra(palabra,"mi_archivo.txt"))
+#palabra:str = "where"
+#print(existe_palabra(palabra,"mi_archivo.txt"))
 
 # --- EJM 3 --------------------------------------------------------------------
 
-# def cantidad_apariciones(nombre_archivo : str, palabra : str) -> int:
-   
+
+def cantidad_apariciones(nombre_archivo : str, palabra : str) -> int:
+    contador:int = 0
+    archivo = open(nombre_archivo,"r")
+
+    for linea in archivo.readlines():
+         listaDePalabras: list[str] = funcionAplanar(linea)  
+         for i in range(len(listaDePalabras)):  
+              if palabra == listaDePalabras[i]:
+                 contador += 1
+    archivo.close()
+    return contador
+
+#palabra:str = "vamos"
+#print(cantidad_apariciones("mi_archivo.txt",palabra))
+                
