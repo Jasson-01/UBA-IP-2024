@@ -38,7 +38,7 @@ def buscar_el_maximo2(p:Pila[int])->int:
 # Version Profe
 # Rompiendo la Pila
 def buscar_el_maximo3(p:Pila[int])->int:
-   # requiere Pila no vacia 
+   # requiere Pila no vacia      
    maximo:int= p.get()
    while (p.empty() == False):
        tope = p.get()
