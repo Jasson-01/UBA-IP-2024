@@ -35,16 +35,6 @@ def es_matriz(matriz:list[list[int]])->bool:
 
 # ------- PROBL - 3 ---------
 
-def esta_ordenada(lista: list[int]) -> bool:
-    for i in range(len(lista) - 1):
-        if lista[i] > lista[i + 1]:
-            return False
-    return True
-
-# Ejemplos de uso
-print(esta_ordenada([1, 2, 3, 4, 5]))  # Debe retornar True
-
-
 def ordenados(lista:list[int])->bool:
     indice:int= 0
     while indice < len(lista)-1:
