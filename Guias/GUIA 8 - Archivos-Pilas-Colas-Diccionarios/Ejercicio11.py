@@ -64,32 +64,3 @@ def esta_bien_balanceada2(s: str) -> bool:
         return False
     
 print(esta_bien_balanceada2('1 +( (2 x 3 - (20 / 5))')) # RES -> False 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
