@@ -20,8 +20,38 @@ def mezclar(s1:list[int],s2:list[int])->list[int]:
 
 # ----- PROBLEM-3 -------
 
-#def frecuencia_posiciones_por_caballo():
+# Este problema esta Hecho por ChatGPT
 
+def frecuencia_posiciones_por_caballo(caballos: list[str], carreras: dict[str, list[str]]) -> dict[str, list[int]]:
+    # Crear el diccionario para almacenar las frecuencias de posiciones
+    resultado = {}
+    for caballo in caballos:
+        resultado[caballo] = [0] * len(caballos)
+#    print(resultado)
+    # Recorrer cada carrera y actualizar las posiciones de los caballos
+    for posiciones_caballos in carreras.values():
+        posicion = 0
+        for caballo in posiciones_caballos:
+            resultado[caballo][posicion] += 1
+            posicion += 1
+
+    return resultado
+
+# Ejemplo de uso
+caballos = ["linda", "petisa", "mister", "luck"]
+carreras = {
+    "carrera1": ["linda", "petisa", "mister", "luck"],
+    "carrera2": ["petisa", "mister", "linda", "luck"]
+}
+
+res = frecuencia_posiciones_por_caballo(caballos, carreras)
+print(res)
+
+"""
+caballos = ["a","b","c","d"]
+carreras = {"carrera1":["a","b","c","d"],"carrera2":["b","c","a","d"]}
+res = {"b":[1,1,0,0],"c":[0,1,1,0],"a":[1,0,1,0],"d":[0,0,0,2]}
+"""
 
 # ----- PROBLEM-4 -------
 
@@ -31,9 +61,9 @@ def matriz_capicua(matriz:list[list[int]])->bool:
             if fila[i] != fila[-i-1]:
                 return False
     return True
-   
-m = [[1,2,2,1],[-5,6,6,-5],[0,1,1,0]]
-print(matriz_capicua(m))
+  
+#m = [[1,2,2,1],[-5,6,6,-5],[0,1,1,0]]
+#print(matriz_capicua(m))
 
 
 
