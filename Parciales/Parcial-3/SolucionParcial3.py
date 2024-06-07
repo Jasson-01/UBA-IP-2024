@@ -59,22 +59,21 @@ def seguidilla(calificaciones:list[int],nota_minima:int)->int:
 
 # -------- PROBLEM-3 ---------
 
-def elem_en_pos_pares(matriz:list[list[int]],elem:int)->list[bool]:
+#Hecho por CharGPT:
+def elem_en_pos_pares(matriz: list[list[int]], elem: int) -> list[bool]:
     resultado = []
+    
     for fila in matriz:
-               
-        if (elem in fila): 
-            for pos in range(len(fila)):
-                if (fila[pos] == elem) and (pos % 2 == 0):
-                   resultado.append(True)          
-        else:
-             resultado.append(False)        
-
-    resultado.append(False)        
+        encontrado = False
+        for i in range(0, len(fila), 2):
+            if fila[i] == elem:
+                encontrado = True
+        resultado.append(encontrado)
+    
     return resultado
 
 
-matris = [[1, 2, 3, 4, 5, 6, 7, 8, 9],[9, 8, 7, 6, 4, 5, 3, 2, 1],[0, 0, 0, 0, 0, 0, 1, 0, 0],[0, 0, 0, 0, 0, 4, 0, 0, 0],[0, 1, 0, 0, 6, 0, 0, 1, 0],]
+#matris = [[1, 2, 3, 4, 5, 6, 7, 8, 9],[9, 8, 7, 6, 4, 5, 3, 2, 1],[0, 0, 0, 0, 0, 0, 1, 0, 0],[0, 0, 0, 0, 0, 4, 0, 0, 0],[0, 1, 0, 0, 6, 0, 0, 1, 0],]
 
 # matris = [[1, 2, 3, 4, 5, 6, 7, 8, 9],          
 #           [9, 8, 7, 6, 4, 5, 3, 2, 1],
@@ -82,24 +81,49 @@ matris = [[1, 2, 3, 4, 5, 6, 7, 8, 9],[9, 8, 7, 6, 4, 5, 3, 2, 1],[0, 0, 0, 0, 0
 #           [0, 0, 0, 0, 0, 4, 0, 0, 0],
 #           [0, 1, 0, 0, 6, 0, 0, 1, 0],]
 
-elem = 1
-print(elem_en_pos_pares(matris,elem)) 
+#elem = 1
+#print(elem_en_pos_pares(matris,elem)) 
 # res = [true,true,true,false,false] 
 
+#elem = 3
+#matriz = [
+#    [3, 2, 3, 4, 3, 6, 3, 8, 9],
+#    [9, 8, 7, 6, 4, 5, 3, 2, 1],
+#    [0, 0, 0, 0, 0, 0, 1, 0, 0],
+#    [0, 0, 0, 0, 0, 4, 0, 0, 0],
+#    [0, 1, 0, 0, 6, 0, 0, 1, 0]
+#]
+# res = [True, True, False, False, False]
+# print(elem_en_pos_pares(matriz, elem)) 
 
 
+# -------- PROBLEM-4 ---------
+
+def viajes_por_dia(viajes_diarios:dict[int,list[str]],usuarios:list[str])->dict[str,int]:
+    resultado:dict = dict()    
+    for us in usuarios:
+        resultado[us] = 0
+
+    for nombres_por_dia in viajes_diarios.values():
+        for us in nombres_por_dia:
+             resultado[us] += 1     
+    return resultado 
 
 
+#viaje_diarios = {1:["Juan","Maria"],2:["Marcela","Juan"]}
+#usuarios = ["Juan","Maria","Marcela"]
+#print(viajes_por_dia(viaje_diarios,usuarios))
+#res = {"Juan":2,"Maria":1,"Marcela":1}
 
-
-
-
-
-
-
-
-
-
+#viajes_diarios = {
+#    1: ["Alberto", "Beatriz", "Carlos"],
+#    2: ["Beatriz", "Alberto", "Carlos"],
+#    3: ["Carlos", "Alberto", "Beatriz"],
+#    4: ["Carlos", "Beatriz"]
+#}
+#usuarios = ["Alberto", "Beatriz", "Carlos"]
+# Resultado esperado: {"Alberto": 3, "Beatriz": 4, "Carlos": 4}
+#print(viajes_por_dia(viajes_diarios, usuarios))
 
 
 
