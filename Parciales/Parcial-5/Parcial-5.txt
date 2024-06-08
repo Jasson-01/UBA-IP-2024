@@ -20,6 +20,7 @@ problema #ap_antes_corte(in c: char, in s: String): Z {
   requiere: {True}
   asegura: {res = cantidad de veces que aparece c desde el inicio hasta que: aparece una x, o que el cálculo del saldo se hace negativo}
 }
+
 Ejemplo 1: dado el siguiente historial
 s = "ssrvvrrvvsvvsxrvvv"
 se debería devolver res = 714
