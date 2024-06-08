@@ -89,44 +89,78 @@ def valores_extremos(cotizaciones_diarias: dict[str, list[tuple[int, float]]]) -
     return res
 
 
-cotizaciones_diarias = {"YPF" : [(1,10),(15, 3), (31,100)], "ALUA" : [(1,0), (20, 50), (31,30)]}
+#cotizaciones_diarias = {"YPF" : [(1,10),(15, 3), (31,100)], "ALUA" : [(1,0), (20, 50), (31,30)]}
 # resultado_esperado es: {"YPF" : (3,100), "ALUA" : (0,50)}
-print(valores_extremos(cotizaciones_diarias))
+#print(valores_extremos(cotizaciones_diarias))
 
 # ------------- PROBLEM - 4 -------------
 
+def filas_validas(matriz:list[list[int]])->bool:
+    for fila in matriz:
+        elementos_vistos = []
+        for pos in fila:
+            if pos == 0:
+                elementos_vistos.append(pos)
+            elif pos not in elementos_vistos:
+                elementos_vistos.append(pos)
+            else:
+                return False
+        elementos_vistos = []    
+    return True    
+"""
+matriz_1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(filas_validas(matriz_1))
+"""
+
+def columnas_validas(matriz: list[list[int]]) -> bool:
+
+    num_filas = len(matriz)
+    num_columnas = len(matriz[0])
+
+    for col in range(num_columnas):
+        elementos_vistos = []
+        for fila in range(num_filas):
+            elemento = matriz[fila][col]
+            if elemento != 0:
+               if elemento in elementos_vistos:
+                  return False
+               elementos_vistos.append(elemento)
+
+    return True
+
+def es_sudoku_valido(matriz:list[list[int]])->bool:
+    if (filas_validas(matriz) == True) and (columnas_validas(matriz) == True) :
+         return True 
+    return False    
 
 
+#m = [
+#[1, 2, 3, 4, 5, 6, 7, 8, 9],
+#[9, 8, 7, 6, 4, 5, 3, 2, 1],
+#[0, 0, 0, 0, 0, 0, 1, 0, 0],
+#[0, 0, 0, 0, 0, 4, 0, 0, 0],
+#[0, 0, 0, 0, 6, 0, 0, 0, 0],
+#[0, 0, 0, 5, 0, 0, 0, 0, 0],
+#[0, 0, 4, 0, 0, 0, 0, 0, 0],
+#[0, 3, 0, 0, 0, 0, 0, 0, 0],
+#[2, 0, 0, 0, 0, 0, 0, 0, 0]
+#]
+# se debería devolver res = true
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+m6 = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9]
+]
+print(es_sudoku_valido(m6))  # Resultado esperado: True
 
