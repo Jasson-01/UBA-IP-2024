@@ -96,68 +96,40 @@ def mesetaMasLarga(lista:list[int])->int:
 # -------------------------- EJERCICIO-4 -------------------------- 
 
 def filas_parecidas(matriz:list[list[int]])->bool:
+    
+    if len(matriz) == 1 :
+        return False 
+ 
     constante =  matriz[1][0] - matriz[0][0] 
-
-    for j in range(len(matriz)): 
+      
+    for j in range(len(matriz)-1): 
           for i in range(len(matriz)):
              if  matriz[j+1][i] - matriz[j][i] != constante :
                   return False
 
     return True
 
-lista = [[1, 2, 3],[5, 6, 7],[9, 10, 11]]
-print(filas_parecidas(lista))
+#lista = [[1, 2, 3]]
+#print(filas_parecidas(lista))
 
+# -------------------------- EJERCICIO-5 -------------------------- 
 
+def sePuedeLlegar(origen:str,llegada:str,vuelos:list[tuple[str,str]])->int:
+    contador:int = 0
+    while(origen != llegada) and (len(vuelos)>0):
+        for i in range(len(vuelos)):
+            if vuelos[i][0] == origen :
+               origen = vuelos[i][1]
+               contador += 1
+               break       
+                       
+        else:
+            return -1 
+    return contador
 
+#origen = "rosario"
+#destino = "jujuy"
+#vuelos = [("misiones","salta"),("salta","jujuy"),("rosario","misiones")]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#print(sePuedeLlegar(origen,destino,vuelos))
 
