@@ -56,6 +56,9 @@ def calcula_expresion(expresion:str)->int:
 
 # -------------------------- Ejercicio-2 --------------------------
 
+# 1ERA FORMA 
+# Todavia no funciona en todos los tests
+"""
 def unir_diccionarios(unir:list[dict[str,list[str]]])->dict[str,str]:
     resultadoDiccionario = dict()
     listaClavesUnicas = []
@@ -79,15 +82,17 @@ def unir_diccionarios(unir:list[dict[str,list[str]]])->dict[str,str]:
 
 entrada = [{'a': [1, 2]}, {'a': [3, 4]}, {'a': [5, 6]}]
 #esperado = {'a': [1, 2, 3, 4, 5, 6]}  ----------------------------------------------
-print(unir_diccionarios(entrada))  # Debe imprimir: True
+print(unir_diccionarios(entrada)) 
 
 
 entrada = [{'a': [1]}, {'b': [2]}, {'a': [3]}, {'c': [4]}, {'b': [5]}, {'a': [6]}, {'d': [7]}]
 #esperado = {'a': [1, 3, 6], 'b': [2, 5], 'c': [4], 'd': [7]} -------------------------------------------------
-print(unir_diccionarios(entrada))  # Debe imprimir: True
 
+print(unir_diccionarios(entrada))  
 
-
+"""
+# 2DA FORMA 
+# Hecho por ChatGPT (Este funciona en todos los tests)
 from typing import List, Dict
 
 def unir_diccionarios2(unir: List[Dict[str, List[str]]]) -> Dict[str, List[str]]:
@@ -103,20 +108,29 @@ def unir_diccionarios2(unir: List[Dict[str, List[str]]]) -> Dict[str, List[str]]
     return resultadoDiccionario
 
 
-entrada = [{'a': [1, 2]}, {'a': [3, 4]}, {'a': [5, 6]}]
-#esperado = {'a': [1, 2, 3, 4, 5, 6]}  ----------------------------------------------
-print(unir_diccionarios2(entrada))  # Debe imprimir: True
+#entrada = [{'a': [1, 2]}, {'a': [3, 4]}, {'a': [5, 6]}]
+#esperado = {'a': [1, 2, 3, 4, 5, 6]} 
+#print(unir_diccionarios2(entrada)) 
 
 
-entrada = [{'a': [1]}, {'b': [2]}, {'a': [3]}, {'c': [4]}, {'b': [5]}, {'a': [6]}, {'d': [7]}]
-#esperado = {'a': [1, 3, 6], 'b': [2, 5], 'c': [4], 'd': [7]} -------------------------------------------------
-print(unir_diccionarios2(entrada))  # Debe imprimir: True
+#entrada = [{'a': [1]}, {'b': [2]}, {'a': [3]}, {'c': [4]}, {'b': [5]}, {'a': [6]}, {'d': [7]}]
+#esperado = {'a': [1, 3, 6], 'b': [2, 5], 'c': [4], 'd': [7]}
 
+# -------------------------- Ejercicio-3 --------------------------
+"""
+from queue import Queue
+from typing import List
+from typing import Dict 
+from typing import Union
 
+# ACLARACION : El tipo de "pedidos" deberia ser: pedidos:Queue[Dict[str,Union[int,str,Dict[str,int]]]]
+# Por no ser soportado por la version de CMS, usamos simplemente "pedidos:Queue" 
 
+def procesamiento_pedidos(pedidos:Queue,
+                          stock_productos:Dict[str,int],
+                          precios_productos:Dict[str,float])->List[Dict[str,Union[int,str,float,Dict[str,int]]]]:
 
-
-
+"""
 
 
 
