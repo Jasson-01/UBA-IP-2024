@@ -1,0 +1,60 @@
+Probl-1)
+El hijo del dueño de la veterinaria, cuya actividad principal es ver tik toks, cree que los productos cuyos codigos de barras terminan en numeros primos son especialmente auspiciosos y deben ser destacados en la tienda. Luego de convencer a su padre de esta idea, solicita una funcion en Python que facilite esta gestion.
+
+Se pide implementar una funcion que, dada una secuencia de enteros, cada uno representando un codigo de barras de un producto, cree y devuelva una nueva lista que contenga unicamente aquellos numeros de la lista original cuyos ultimos tres digitos formen un numero primo (por ejemplo, 101,002 y 011)
+
+Nota: un numero primo es aquel que solo es divisible por si mismo y por 1. Algunos ejemplos de numeros primos de hasta tres digitos son: 2,3,5,101,103,107,etc. 
+
+problema filtrar_codigos_primos(in codigos_barra:seq<Z>): seq<Z> {
+    requiere: { Todos los enteros de codigos_barra tienen, por lo menos, 3 digitos }
+    requiere: { No hay elementos repetidos en codigos_barra }
+    asegura: { los ultimos 3 digitos de cada uno de los elementos de res forman un numero primo}
+    asegura: { Todos los elementos de codigos_barra cuyos ultimos 3 digitos forman un numero primo estan en res }
+    asegura: { Todos los elementos de res estan en codigos_barra }
+}
+
+
+
+
+
+
+###################################################################
+probl-3)Matriz de responsables por turnos
+Las personas responsables de los turnos estan anotadas en una matriz donde las columnas representan los dias, en orden de lunes a domingo, y cada fila a un rango de una hora. Hay cuatro filas para los turnos de la mañana (9, 10, 11 y 12 hs) y otras cuatro para la tarde (14, 15, 16 y 17).
+
+Para hacer mas eficiente el trabajo del personal de la veterinaria, se necesita analizar si quienes quedan de responsables, estan asignadosas de manera continuada en los turnos de cada dia.
+
+Para ello se pide desarrollar una funcion en Python que, dada la matriz de turnos, devuelva una lista de tuplas de Bool, una por cada dia. Cada tupla debe contener dos elementos. El primer elemento debe ser True si solo si todos los valores de los turnos de la mañana para ese dia son iguales entre se. El segundo elemento debe ser True si solo si todos los valores de los turnos de la tarde para ese dia son iguales entre si. Siempre hay una persona responsable en cualquier horario de la veterinaria. 
+
+problema un_responsable_por_turno(in grilla_horaria:seq(seq(String)):seq((Bool x Bool)){
+     requiere : {|grilla_horaria| = 8 }
+     requiere : {Todos los elementos de grilla_horaria tienen el mismo tamaño (mayor a 0 y menor a 8)}
+     requiere : {No hay cadenas vacias en las listas de grilla_horaria}
+     asegura : {|res| = |grilla_horaria|}
+     asegura : {El primer valor de la tupla en res[i], con i:Z, 0<=i<|res| es igual a True <=> los primeros 4 valores de la      columna i de la grilla_horaria son iguales entre si }
+     asegura : {El segundo valor de la tupla en res[i], con i:Z, 0<=i<|res| es igual a True <=> los ultimos 4 valores de           la columna i de la grilla_horaria son iguales entre si }  
+     }
+
+
+
+####################################################################
+probl-4) Subsecuencia mas larga
+Con el objetivo de organizar el flujo de pacientes, en la veterinaria se anotan los tipos de mascotas que van infresando al local.Se necesita identificar las consultas que involucran solo a perros y gatos.Por eso, se decide desarrollar una funcion en Python que encuentre la secuencia mas larga de consultas consecutivas que solo contenga los tipos de mascota "perro" o "gato".
+
+Se pide implementar una funcion que, dada una secuencia de Strings, que representan los tipos de animales atendidos, devuelva el indice donde comienza la subsecuencia mas larga que cumpla con estas condiciones.
+
+problema subsecuencia_mas_larga(in tipos_pacientes_atendidos:seq(String)):Z{
+requiere:{tipos_pacientes_atendidos tiene, por lo menos, un elemento "perro" o "gato"}
+asegura:{res es el indice donde empieza la subsecuencia mas larga de tipos_pacientes_atendidos que contenga solo elementos "perro" o "gato"}
+asegura:{Si hay mas de una subsecuencia de tamaño maximo, res tiene el indice de la primera}
+}
+
+
+
+
+
+
+
+
+
+  
