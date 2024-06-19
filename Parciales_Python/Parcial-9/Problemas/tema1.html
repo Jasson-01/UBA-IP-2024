@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body style="width: 50%;margin: 1% auto;">
+
+<div>
+
+<h1> Parcial Python - Tema 1 </h1>
+
+<h2> Importante </h2>
+
+<ul>
+  <li>El parcial se aprueba con 6 puntos</li>
+  <li>Utilizar <a href="#" onclick="forceDownload('/parcial/template_t1.py', 'template_t1.py')">este</a> archivo fuente de base para la programación. Ya cuenta con los def y las signaturas correctas.</li>
+  <li>Lista de funciones permitidas <a href="/static/python_permitidas.html">aca</a></li>
+  <li>Para testear el código pueden usar <a href="#" onclick="forceDownload('/parcial/tema1-test.py', 'tema1-test.py')">este</a> archivo que ya cuenta con todo lo necesario para desarrollar sus propios tests (este archivo no se entrega)</li>
+  <li><b style="color:red">Para aprobar el parcial es requisito indispensable que todos los programas pasen los tests del archivo del punto anterior</b></li>
+</ul>
+
+<form name="form1" action="/submit_examen" method="post" enctype="multipart/form-data" onsubmit="return validaciones(event)">
+
+
+  <p>Un grupo de amigos apasionados por las salas de escape, esas aventuras inmersivas donde tienen 60 minutos para salir de una habitación resolviendo enigmas, llevan un registro meticuloso de todas las salas de escape que hay en Capital. Este registro indica si han visitado una sala y si pudieron o no salir de ella. Un 0 significa que no fueron, un 61 que no lograron salir a tiempo, y un número entre 1 y 60 representa los minutos que les tomó escapar exitosamente. Con estos datos, pueden comparar sus logros y desafíos en cada nueva aventura que emprenden juntos.</p>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">1) Promedio de salidas [2 puntos]</h3>
+
+  <p>Dado un diccionario donde la clave es el nombre de cada amigo y el valor es una lista de los tiempos (en minutos) registrados para cada sala de escape en Capital, escribir una función en Python que devuelva un diccionario. En este nuevo diccionario, las claves deben ser los nombres de los amigos y los valores deben ser tuplas que indiquen la cantidad de salas de las que cada persona logró salir y el promedio de los tiempos de salida (solo considerando las salas de las que lograron salir)</p>
+  
+  <p> problema promedio_de_salidas (in <i>registro</i>: dict⟨String, seq⟨Z⟩⟩) :  dict⟨String, ⟨Z x R⟩⟩ {<br>
+    &nbsp; <strong>requiere:</strong> {<i>registro</i> tiene por lo menos un integrante}<br>
+    &nbsp; <strong>requiere:</strong> {Todos los integrantes de <i>registro</i> tiene por lo menos un tiempo}<br>
+    &nbsp; <strong>requiere:</strong> {Todos los valores de <i>registro</i> tiene la misma longitud}<br>
+    &nbsp; <strong>requiere:</strong> {Todos los tiempos de los valores de <i>registro</i> están entre 0 y 61 inclusive}<br>
+
+    &nbsp; <strong>asegura:</strong> {<i>res</i> tiene las mismas claves que <i>registro</i>}<br>
+    &nbsp; <strong>asegura:</strong> {El primer elemento de la tupla de <i>res</i> para un integrante, es la cantidad de salas con tiempo mayor estricto a 0 y menor estricto a 61 que figuran en sus valores de <i>registro</i>}<br>
+    &nbsp; <strong>asegura:</strong> {El segundo elemento de la tupla de <i>res</i> para un integrante, si la cantidad de salas de las que salió es mayor a 0: es el promedio de salas con tiempo mayor estricto a 0 y menor estricto a 61 que figuran en sus valores de <i>registro</i>; sino es 0.0}<br>
+
+  }<br>
+  </p>
+
+</p>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">2) Tiempo más rápido [1 punto]</h3>
+
+  <p>Dada una lista con los tiempos (en minutos) registrados para cada sala de escape de Capital, escribir una función en Python que devuelva la posición (índice) en la cual se encuentra el tiempo más rápido, excluyendo las salas en las que no haya salido (0 o mayor a 60). </p>
+
+  <p> problema tiempo_mas_rapido (in <i>tiempos_salas</i>: seq⟨Z⟩):  Z {<br>
+    &nbsp; <strong>requiere:</strong> {Hay por lo menos un elemento en <i>tiempos_salas</i> entre 1 y 60 inclusive}<br>
+    &nbsp; <strong>requiere:</strong> {Todos los tiempos en <i>tiempos_salas</i> están entre 0 y 61 inclusive}<br>
+
+    &nbsp; <strong>asegura:</strong> {<i>res</i> es la posición de la sala en <i>tiempos_salas</i> de la que más rápido se salió (en caso que haya más de una, devolver la primera, osea la de menor índice)}<br>
+  }<br>
+  </p>
+
+<hr style="width: 100%;">
+<h3 style="color:#1A5276">3) Racha más larga [3 puntos]</h3>
+
+<p>Dada una lista con los tiempos (en minutos) registrados para cada sala de escape a la que fue una persona, escribir una función en Python que devuelva una tupla con el índice de inicio y el índice de fin de la subsecuencia más larga de salidas exitosas de salas de escape consecutivas.</p>
+
+
+<p> problema racha_mas_larga (in <i>tiempos</i>: seq⟨Z⟩): ⟨Z x Z⟩ {<br>
+  &nbsp; <strong>requiere:</strong> {Hay por lo menos un elemento en <i>tiempos</i> entre 1 y 60 inclusive}<br>
+  &nbsp; <strong>requiere:</strong> {Todos los tiempos en <i>tiempos</i> están entre 0 y 61 inclusive}<br>
+
+  &nbsp; <strong>asegura:</strong> {En la primera posición de <i>res</i> está la posición (índice de la lista) de la sala que inicia la racha más larga}<br>
+  &nbsp; <strong>asegura:</strong> {En la segunda posición de <i>res</i> está la posición (índice de la lista) de la sala que finaliza la racha más larga}<br>
+  &nbsp; <strong>asegura:</strong> {El elemento de la primer posición de <i>res</i> en <i>tiempos</i> es mayor estricto 0 y menor estricto que 61}<br>
+  &nbsp; <strong>asegura:</strong> {El elemento de la segunda posición de <i>res</i> en <i>tiempos</i> es mayor estricto 0 y menor estricto que 61}<br>
+  &nbsp; <strong>asegura:</strong> {La primera posición de <i>res</i> es menor o igual a la segunda posición de <i>res</i> }<br>
+  &nbsp; <strong>asegura:</strong> {No hay valores iguales a 0 o a 61 en <i>tiempos</i> entre la primer posición de <i>res</i> y la segunda posición de <i>res</i>}<br>
+  &nbsp; <strong>asegura:</strong> {No hay otra subsecuencia de salidas exitosas, en <i>tiempos</i>, de mayor longitud que la que está entre la primer posición de <i>res</i> y la segunda posición de <i>res</i>}<br>
+  &nbsp; <strong>asegura:</strong> {Si hay dos o más subsecuencias de salidas exitosas de mayor longitud en <i>tiempos</i>, <i>res</i> debe contener la primera de ellas.}<br>
+
+}<br>
+</p>
+
+<hr style="width: 100%;">
+<h3 style="color:#1A5276">4) Escape en solitario [2 puntos]</h3>
+<p>Dada una matriz donde las columnas representan a cada amigo  y las filas representan las salas de escape, y los valores son los tiempos (en minutos) registrados para cada sala (0 si no fueron, 61 si no salieron, y un número entre 1 y 60 si salieron), escribir una función en Python que devuelva los índices de todas las filas (que representan las salas) en las cuales el primer, segundo y cuarto amigo no fueron (0), pero el tercero sí fue (independientemente de si salió o no).</p>
+<p> problema escape_en_solitario (in <i>amigos_por_salas</i>: seq⟨seq⟨Z⟩⟩): seq⟨Z⟩ {<br>
+  &nbsp; <strong>requiere:</strong> {Hay por lo menos una sala en <i>amigos_por_salas</i>}<br>
+  &nbsp; <strong>requiere:</strong> {Hay 4 amigos en <i>amigos_por_salas</i>}<br>
+  &nbsp; <strong>requiere:</strong> {Todos los tiempos en cada sala de <i>amigos_por_salas</i> están entre 0 y 61 inclusive}<br>
+
+  &nbsp; <strong>asegura:</strong> {La longitud de <i>res</i> es menor igual que la longitud de <i>amigos_por_salas</i>}<br>
+  &nbsp; <strong>asegura:</strong> {Por cada sala en <i>amigos_por_salas</i> cuyo primer, segundo y cuarto valor sea 0, y el tercer valor sea distinto de 0, la posición de dicha  sala en <i>amigos_por_salas</i> debe aparecer <i>res</i>}<br> <!-- Si hay salas repetidas en el resultado no se repiten. -->
+  &nbsp; <strong>asegura:</strong> {Para todo i pertenciente a <i>res</i> se cumple que el primer, segundo y cuarto valor de <i>amigos_por_salas</i>[i] es 0, y el tercer valor es distinto de 0}<br> <!-- Si hay salas repetidas en el resultado no se repiten. -->
+
+}<br>
+</p>
+
+
+<hr style="width: 100%;">
+  <h3 style="color:#1A5276">5) Preguntas teóricas (2 puntos)</h3>
+  
+  <p>Conteste marcando la opción correcta.</p>
+    
+      <h4 style="color:#1A5276">A) ¿Cuál es el propósito de la sentencia 'else' en una estructura 'if' en Python?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_1" id="CAopcion1" value="1" />
+	      <label for="CAopcion1">Definir una variable local.</label> <br>
+	  <input type="radio" name="mchoice_1" id="CAopcion2" value="2" />
+	      <label for="CAopcion2">Ejecutar un bloque de código si todas las condiciones anteriores son falsas.</label> <br>
+	  <input type="radio" name="mchoice_1" id="CAopcion3" value="3" />
+	      <label for="CAopcion3">Iniciar un ciclo 'while'.</label> <br>
+	  </p>
+
+
+      <h4 style="color:#1A5276">B) ¿Qué hace la sentencia 'break' en un ciclo en Python?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_2" id="CBopcion1" value="1" />
+	      <label for="CBopcion1">Reinicia el ciclo desde el principio.</label> <br>
+	  <input type="radio" name="mchoice_2" id=CBopcion2" value="2" />
+	      <label for="CBopcion2">Termina el ciclo inmediatamente.</label> <br>
+	  <input type="radio" name="mchoice_2" id="CBopcion3" value="3" />
+	      <label for="CBopcion3">Salta la siguiente iteración del ciclo.</label> <br>
+	  </p>
+
+      <h4 style="color:#1A5276">C) ¿Qué diferencia hay entre coverage de sentencias y coverage de branches?  (0.5 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_3" id="CCopcion1" value="1" />
+	      <label for="CCopcion1">Coverage de sentencias verifica cada línea de código, mientras que coverage de branches verifica las posibles salidas de las decisiones lógicas.</label> <br>
+	  <input type="radio" name="mchoice_3" id="CCopcion2" value="2" />
+	      <label for="CCopcion2">Coverage de branches verifica cada línea de código, mientras que coverage de sentencias verifica las posibles salidas de las decisiones lógicas.</label> <br>
+	  <input type="radio" name="mchoice_3" id="CCopcion3" value="3" />
+	      <label for="CCopcion3">No hay diferencia, ambos se refieren al mismo concepto.</label> <br>
+	  </p>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">Adjunta el archivo con tu solución:</h3>
+  <p><b style="color:red">Solo se puede adjuntar 1 archivo de extensión .py. En caso de haber desarrollado tests propios, no deben ser entregados.</b></p>
+  
+  <label for="archivo">Seleccionar archivo a enviar:</label>
+  <input type="file" id="archivo" name="archivo" required accept=".py,text/x-python"/>
+
+  <input type="submit" value="Enviar"
+        style= "background-color: #1A5276; border-radius: 5px;
+                margin-top:10px;padding: 10px 150px;color: #FFFFFF;
+                font-size: 20px;cursor: pointer; width:100%" >
+
+</form>
+</div>
+<script>
+  function validaciones(event) {
+    var confirmacion = confirm("Confirmo que revisé que compila el código, seleccioné las respuestas multiple choice y que quiero entregar mi examen");
+    if (!confirmacion) {
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      }
+      event.returnValue = true;
+      return true;
+  }
+
+// registro una funcion para mostrar el archivo cuando se adjunta.
+// de esa forma evitamos que se adjunten otros archivos por error
+document
+  .getElementById('archivo')
+  .addEventListener(
+      'change',
+      function () {
+          var fr = new FileReader();
+          fr.onload = function () {
+              alert(this.result);
+          };
+          fr.readAsText(this.files[0]);
+      }
+  );
+
+// para forzar a bajar el template de hunit y que no se pueda abrir en un nuevo tab
+// (el browser intenta mostrar el codigo como HTML y el formato se ve raro)
+function forceDownload(url, filename) {
+  fetch(url).then(function(t) {
+    return t.blob().then((b) => {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(b);
+      a.setAttribute("download", filename);
+      a.click();
+    });
+  });
+}
+</script>
+</body>
+
+</html>

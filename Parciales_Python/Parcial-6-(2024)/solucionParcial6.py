@@ -4,7 +4,7 @@ from queue import LifoQueue as Pila
 
 # -------------------------------------- PROBLEM-1 --------------------------------------
 
-#def reordenar_cola_priorizando_vips(filaClientes:Cola[str,str])->Cola[str]: 
+# def reordenar_cola_priorizando_vips(filaClientes:Cola[str,str])->Cola[str]: 
 
 def reordenar_cola_priorizando_vips(filaClientes: Cola[tuple[str, str]]) -> Cola[str]:
     vips = []

@@ -1,0 +1,214 @@
+<html>
+<head>
+  <link rel="icon" href="data:,">
+  <link href="css/style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <style>
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .conditions {
+        margin-left: 20px;
+    }
+</style>
+</head>
+
+<body style="width: 50%;margin: 1% auto;">
+
+<div>
+<h1> Parcial Python - Tema 1 </h1>
+
+<h2> Importante </h2>
+
+<ul>
+  <li>El parcial se aprueba con 6 puntos</li>
+  <li>Utilizar <a href="#" onclick="forceDownload('/parcial/template_t1.py', 'template_t1.py')">este</a> archivo fuente de base para la programación. Ya cuenta con los def y las signaturas correctas.</li>
+  <li>Lista de funciones permitidas <a href="/static/python_permitidas.html">aca</a></li>
+  <li>Para testear el código pueden usar <a href="#" onclick="forceDownload('/parcial/tema1-test.py', 'tema1-test.py')">este</a> archivo que ya cuenta con todo lo necesario para desarrollar sus propios tests (este archivo no se entrega)</li>
+  <li><b style="color:red">Para aprobar el parcial es requisito indispensable que todos los programas pasen los tests del archivo del punto anterior</b></li>
+</ul>
+
+<form name="form1" action="/submit_examen" method="post" enctype="multipart/form-data" onsubmit="return validaciones(event)">
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">1) Análisis de Stock [2 puntos]</h3>
+
+<p>En la veterinaria "Exactas's pets", al finalizar cada día, el personal registra en papeles los nombres y la cantidad actual de los productos cuyo stock ha cambiado. Para mejorar la gestión, desde la dirección de la veterinaria han pedido desarrollar una solución en Python que les permita analizar las fluctuaciones del stock.</p>
+<p>Se pide implementar una función, que reciba una lista de tuplas donde cada tupla contiene el nombre de un producto y su stock en ese momento. La función debe procesar esta lista y devolver un diccionario que 
+  tenga como clave el nombre del producto y como valor una tupla con su mínimo y máximo stock histórico registrado. </p>
+
+<p> problema stock_productos (in <i>stock_cambios</i>: seq⟨(String x Z)) :  dict⟨String, (Z x Z)⟩ {<br>
+  &nbsp; <strong>requiere:</strong> { Todos los elementos de <i>stock_cambios</i> están formados por un String no vacío y un entero ≥ 0 }<br>
+  &nbsp; <strong>asegura:</strong> {<i>res</i> tiene como claves solo los primeros elementos de las tuplas de <i>stock_cambios</i> (o sea, un producto)} <br>
+  &nbsp; <strong>asegura:</strong> {<i>res</i> tiene como claves todos los primeros elementos de las tuplas de <i>stock_cambios</i>}<br>
+  &nbsp; <strong>asegura:</strong> {El valor en <i>res</i> de un producto es una tupla de cantidades. Su primer elemento es la menor cantidad de ese producto en <i>stock_cambios</i> y como segundo valor el mayor}<br>
+}<br>
+</p>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">2) Filtrar códigos de barra [2 puntos] </h3>
+
+<p>El hijo del dueño de la veterina, cuya actividad principal es ver tik toks, cree que los productos cuyos códigos de barras terminan en números primos son especialmente auspiciosos y deben ser destacados en la tienda. Luego de convencer a su padre de esta idea, solicita una función en Python que facilite esta gestión.</p>
+<p>Se pide implementar una función que, dada una secuencia de enteros, cada uno representando un código de barras de un producto, cree y devuelva una nueva lista
+  que contenga únicamente aquellos números de la lista original cuyos últimos tres dígitos formen un número primo (por ejemplo, 101, 002 y 011).</p>
+  
+Nota: Un número primo es aquel que solo es divisible por sí mismo y por 1. Algunos ejemplos de números primos de hasta tres dígitos son: 2, 3, 5, 101, 103, 107, etc.
+
+<p> problema filtrar_codigos_primos (in <i>codigos_barra</i>: seq⟨Z⟩) : seq⟨Z⟩ {<br>
+  &nbsp; <strong>requiere:</strong>{Todos los enteros de <i>codigos_barra</i> tienen, por lo menos, 3 dígitos}<br>
+  &nbsp; <strong>requiere:</strong>{No hay elementos repetidos en <i>codigos_barra</i>}<br>
+    &nbsp; <strong>asegura:</strong> {los últimos 3 dígitos de cada uno de los elementos de <i>res</i> forman un número primo}<br>
+    &nbsp; <strong>asegura:</strong> {Todos los elementos de <i>codigos_barra</i> cuyos últimos 3 dígitos forman un número primo están en <i>res</i>}<br>
+    &nbsp; <strong>asegura:</strong> {Todos los elementos de <i>res</i> están en <i>codigos_barra</i> }<br>
+  }<br>
+</p>
+ 
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">3) Flujo de pacientes [2 puntos]</h3>
+
+  <p>Con el objetivo de organizar el flujo de pacientes, en la veterinaria se anotan los tipos de mascotas que van ingresando al local. 
+    Se necesita identificar las consultas que involucran solo a perros y gatos. Por eso, se decide desarrollar una función en Python que encuentre la secuencia más larga de consultas consecutivas que solo contenga los tipos de mascota "perro" o "gato".</p>
+  <p>Se pide implementar una función que, dada una secuencia de Strings, que representan los tipos de animales atendidos, devuelva el índice donde comienza la subsecuencia más larga que cumpla con estas condiciones.</p>
+
+<p> problema subsecuencia_mas_larga(in <i>tipos_pacientes_atendidos</i>: seq⟨String⟩) : Z{<br>
+    &nbsp; <strong>requiere:</strong> {<i>tipos_pacientes_atendidos</i> tiene, por lo menos, un elemento "perro" o "gato"}<br>
+    &nbsp; <strong>asegura:</strong> {<i>res</i> es el índice donde empieza la subsecuencia más larga de <i>tipos_pacientes_atendidos</i> que contenga solo elementos "perro" o "gato"}<br>
+    &nbsp; <strong>asegura:</strong> {Si hay más de una subsecuencia de tamaño máximo, <i>res</i> tiene el índice de la primera)}<br>
+  }<br>
+  </p>
+
+  
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">4) Tabla turnos [2 puntos]</h3>
+  
+  
+  <p>Las personas responsables de los turnos están anotadas en una matriz donde las columnas representan los días, en orden de lunes a domingo, y cada fila a un rango 
+    de una hora. Hay cuatro filas para los turnos de la mañana (9, 10, 11 y 12 hs) y otras cuatro para la tarde (14, 15, 16 y 17).</p>
+  
+  <p>Para hacer más eficiente el trabajo del personal de la veterinaria, se necesita analizar si quienes quedan de responsables, están asignadas de manera continuada en los turnos de cada día.</p>
+    <p>
+Para ello se pide desarrollar una función en Python que, dada la matriz de turnos, devuelva una lista de tuplas de Bool, una por cada día. Cada tupla debe contener dos elementos.
+    El primer elemento debe ser True si y solo si todos los valores de los turnos de la mañana para ese día son iguales entre sí.
+    El segundo elemento debe ser True si y solo si todos los valores de los turnos de la tarde para ese día son iguales entre sí.
+    
+    Siempre hay una persona responsable en cualquier horario de la veterinaria.
+</p>
+
+<p> problema un_responsable_por_turno (in <i>grilla_horaria</i>: seq⟨seq⟨String⟩⟩: seq⟨(Bool x Bool)⟩
+{<br>
+&nbsp; <strong>requiere:</strong> {|<i>grilla_horaria</i>| = 8} <br>
+&nbsp; <strong>requiere:</strong> {Todos los elementos de <i>grilla_horaria</i> tienen el mismo tamaño (mayor a 0 y menor 8)} <br>
+&nbsp; <strong>requiere:</strong> {No hay cadenas vacías en las listas de  <i>grilla_horaria</i>} <br>
+&nbsp; <strong>asegura:</strong> {|<i>res</i>| = |<i>grilla_horaria[0]</i>| }<br>
+&nbsp; <strong>asegura:</strong> {El primer valor de la tupla en <i>res</i> [i], con i:Z, 0 <= i < |<i>res</i>| es igual a True <=>
+                    los primeros 4 valores de la columna  <i>i</i> de <i>grilla_horaria</i> son iguales entre sí}<br>
+&nbsp; <strong>asegura:</strong> {El segundo valor de la tupla en <i>res</i> [i], con i:Z, 0 <= i < |<i>res</i>| es igual a True <=>
+                                        los últimos 4 valores de la columna  <i>i</i> de <i>grilla_horaria</i> son iguales entre sí}<br>
+  }<br>
+  </p>
+
+
+<hr style="width: 100%;">
+  <h3 style="color:#1A5276">5) Preguntas teóricas (2 puntos)</h3>
+  
+  <p>Conteste marcando la opción correcta.</p>
+    
+      <h4 style="color:#1A5276">A) ¿Qué se entiende por 'estado' en un programa?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_1" id="DAopcion1" value="1" />
+	      <label for="DAopcion1">La apariencia visual del código fuente.</label> <br>
+	  <input type="radio" name="mchoice_1" id="DAopcion2" value="2" />
+	      <label for="DAopcion2">La configuración de todas las variables en un punto específico durante la ejecución de un programa.</label> <br>
+	  <input type="radio" name="mchoice_1" id="DAopcion3" value="3" />
+	      <label for="DAopcion3">El nombre del archivo donde se guarda el código fuente.</label> <br>
+	  </p>
+
+
+      <h4 style="color:#1A5276">B) ¿Cuál es la diferencia entre una variable de 'scope global' y una variable de 'scope local'?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_2" id="DBopcion1" value="1" />
+	      <label for="DBopcion1">No hay ninguna diferencia, ambos términos significan lo mismo.</label> <br>
+	  <input type="radio" name="mchoice_2" id="DBopcion2" value="2" />
+	      <label for="DBopcion2">Las variables globales son accesibles desde cualquier parte del programa, mientras que las variables locales solo son accesibles dentro del bloque donde fueron definidas.</label> <br>
+	  <input type="radio" name="mchoice_2" id="DBopcion3" value="3" />
+	      <label for="DBopcion3">Las variables locales son accesibles desde cualquier parte del programa, mientras que las variables globales solo son accesibles dentro del bloque donde fueron definidas.</label> <br>
+	  </p>
+
+      <h4 style="color:#1A5276">C) ¿Qué es un Control Flow Graph (CFG)?  (0.5 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_3" id="DCopcion1" value="1" />
+	      <label for="DCopcion1">Un diagrama que representa la estructura jerárquica del código.</label> <br>
+	  <input type="radio" name="mchoice_3" id="DCopcion2" value="2" />
+	      <label for="DCopcion2">Un diagrama que muestra los diferentes caminos que puede tomar la ejecución del programa a través de sus instrucciones y decisiones.</label> <br>
+	  <input type="radio" name="mchoice_3" id="DCopcion3" value="3" />
+	      <label for="DCopcion3">Un gráfico que representa el rendimiento del software en diferentes entornos.</label> <br>
+	  </p>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">Adjunta el archivo con tu solución:</h3>
+  <p><b style="color:red">Solo se puede adjuntar 1 archivo de extensión .py. En caso de haber desarrollado tests propios, no deben ser entregados.</b></p>
+  
+  <label for="archivo">Seleccionar archivo a enviar:</label>
+  <input type="file" id="archivo" name="archivo" required accept=".py,text/x-python"/>
+
+  <input type="submit" value="Enviar"
+        style= "background-color: #1A5276; border-radius: 5px;
+                margin-top:10px;padding: 10px 150px;color: #FFFFFF;
+                font-size: 20px;cursor: pointer; width:100%" >
+
+</form>
+</div>
+<script>
+  function validaciones(event) {
+    var confirmacion = confirm("Confirmo que revisé que compila el código, seleccioné las respuestas multiple choice y que quiero entregar mi examen");
+    if (!confirmacion) {
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      }
+      event.returnValue = true;
+      return true;
+  }
+
+// registro una funcion para mostrar el archivo cuando se adjunta.
+// de esa forma evitamos que se adjunten otros archivos por error
+document
+  .getElementById('archivo')
+  .addEventListener(
+      'change',
+      function () {
+          var fr = new FileReader();
+          fr.onload = function () {
+              alert(this.result);
+          };
+          fr.readAsText(this.files[0]);
+      }
+  );
+
+// para forzar a bajar el template de hunit y que no se pueda abrir en un nuevo tab
+// (el browser intenta mostrar el codigo como HTML y el formato se ve raro)
+function forceDownload(url, filename) {
+  fetch(url).then(function(t) {
+    return t.blob().then((b) => {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(b);
+      a.setAttribute("download", filename);
+      a.click();
+    });
+  });
+}
+</script>
+</body>
+
+</html>

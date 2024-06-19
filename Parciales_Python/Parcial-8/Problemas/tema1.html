@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body style="width: 50%;margin: 1% auto;">
+
+<div>
+
+<h1> Parcial Python - Tema 1 </h1>
+
+<h2> Importante </h2>
+
+<ul>
+  <li>El parcial se aprueba con 6 puntos</li>
+  <li>Utilizar <a href="#" onclick="forceDownload('/parcial/template_t1.py', 'template_t1.py')">este</a> archivo fuente de base para la programación. Ya cuenta con los def y las signaturas correctas.</li>
+  <li>Lista de funciones permitidas <a href="/static/python_permitidas.html">aca</a></li>
+  <li>Para testear el código pueden usar <a href="#" onclick="forceDownload('/parcial/tema1-test.py', 'tema1-test.py')">este</a> archivo que ya cuenta con todo lo necesario para desarrollar sus propios tests (este archivo no se entrega)</li>
+  <li><b style="color:red">Para aprobar el parcial es requisito indispensable que todos los programas pasen los tests del archivo del punto anterior</b></li>
+</ul>
+
+<form name="form1" action="/submit_examen" method="post" enctype="multipart/form-data" onsubmit="return validaciones(event)">
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">1) Atención por Guardia (1 punto)</h3>
+<br>
+Desde el Hospital Fernandez nos pidieron solucionar una serie de problemas relacionados con la información que maneja sobre los pacientes y el personal de salud.
+En primer lugar debemos resolver en qué orden se deben atender los pacientes que llegan a la guardia. En enfermería, hay una primera instancia que clasifica en dos colas a los pacientes: una urgente y otra postergable (esto se llama hacer triage). 
+A partir de dichas colas que contienen la identificación del paciente, se pide devolver una nueva cola según la siguiente especificación.
+<br>
+  <p> problema orden_de_atencion ( in <i>urgentes</i>: cola⟨Z⟩, in <i>postergables</i>: cola⟨Z⟩) :  cola⟨Z⟩ {<br>
+    &nbsp; <strong>requiere:</strong> {no hay elementos repetidos en <i>urgentes</i>}<br>
+     &nbsp; <strong>requiere:</strong> {no hay elementos repetidos en <i>postergables</i>}<br>
+     &nbsp; <strong>requiere:</strong> {la intersección entre <i>postergables</i> y <i>urgentes</i> es vacía}<br>
+     &nbsp; <strong>requiere:</strong> {|<i>postergables</i>| = |<i>urgentes</i>|}<br>
+
+    &nbsp; <strong>asegura:</strong> {no hay repetidos en <i>res</i> }<br>
+     &nbsp; <strong>asegura:</strong> {<i>res</i> es permutación de la concatenación de <i>urgentes</i> y <i>postergables</i>}<br>
+    &nbsp; <strong>asegura:</strong> {Si <i>urgentes</i> no es vacía, en tope de <i>res</i> hay un elemento de <i>urgentes</i>}<br>
+    &nbsp; <strong>asegura:</strong> {En <i>res</i> no hay dos seguidos de <i>urgentes</i>}<br>
+    &nbsp; <strong>asegura:</strong> {En <i>res</i> no hay dos seguidos de <i>postergables</i>}<br>
+    
+        &nbsp; <strong>asegura:</strong> {Para todo <i>c1</i> y <i>c2</i> de tipo "urgente" pertenecientes a <i>urgentes</i> si <i>c1</i> aparece antes que <i>c2</i> en <i>urgentes</i> entonces <i>c1</i> aparece antes que <i>c2</i> en <i>res</i>}<br>
+    &nbsp; <strong>asegura:</strong> {Para todo <i>c1</i> y <i>c2</i> de tipo "postergable" pertenecientes a <i>postergables</i> si <i>c1</i> aparece antes que <i>c2</i> en <i>postergables</i> entonces <i>c1</i> aparece antes que <i>c2</i> en <i>res</i>}<br>
+    
+  </p>
+  
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">2) Alarma epidemiológica. (3 puntos)</h3>
+<br>Necesitamos detectar la aparición de posibles epidemias. 
+Para esto contamos con un lista de enfermedades infecciosas y los registros de atención por guardia dados por una lista expedientes.
+Cada expediente es una tupla con ID paciente y enfermedad que motivó la atención. 
+Debemos devolver un diccionario cuya clave son las enfermedades infecciosas y su valor es la proporción de pacientes que se atendieron por esa enfermedad. 
+En este diccionario deben aparecer solo aquellas enfermedades infecciosas cuya proporción supere cierto umbral. 
+<br>
+  <p> problema alarma_epidemiologica (<i>registros</i>: seq⟨ZxString⟩, <i>infecciosas</i>: seq⟨String⟩, <i>umbral</i>: R) :  dict⟨String,R⟩ {<br>
+    &nbsp; <strong>requiere:</strong> {0 < <i>umbral</i> < 1} <br>
+    &nbsp; <strong>asegura:</strong> {claves de <i>res</i> pertenecen a <i>infecciosas</i>}<br>
+    &nbsp; <strong>asegura:</strong> {Para cada enfermedad perteneciente a <i>infecciosas</i>, si el porcentaje de pacientes que se atendieron por esa enfermedad sobre el total de <i>registros</i> es mayor o igual al umbral, entonces <i>res</i>[enfermedad] = porcentaje}<br>
+    &nbsp; <strong>asegura:</strong> {Para cada enfermedad perteneciente a <i>infecciosas</i>, si el porcentaje de pacientes que se atendieron por esa enfermedad sobre el total de <i>registros</i> es menor que el umbral, entonces enfermedad no aparece en <i>res</i>}<br>
+  }<br>
+  </p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">3)  Empleados del mes (2 puntos)</h3>
+  Dado un diccionario con la cantidad de horas trabajadas por empleado, en donde la clave es el ID del empleado y el valor es una lista de las horas trabajadas por día, queremos saber quienes trabajaron más para darles un premio.
+  Se deberá buscar la o las claves para la cual se tiene el máximo valor de cantidad total de horas, y devolverlas en una lista. 
+  <br>
+
+<p> problema empleados_del_mes(<i>horas</i>:dicc⟨Z,seq⟨Z⟩⟩) : seq⟨Z⟩ {<br>
+    &nbsp; <strong>requiere:</strong> {No hay valores en <i>horas</i> que sean listas vacías} <br>
+    &nbsp; <strong>asegura:</strong> {Si ID pertence a <i>res</i> entonces ID pertence a las claves de <i>horas</i>}<br>
+
+    &nbsp; <strong>asegura:</strong> {Si ID pertenece a <i>res</i>, la suma de sus valores de <i>horas</i> es el máximo de la suma de elementos de <i>horas</i> de todos los otros IDs}<br>
+    &nbsp; <strong>asegura:</strong> {Para todo ID de claves de <i>horas</i>, si la suma de sus valores es el máximo de la suma de elementos de <i>horas</i> de los otros IDs, entonces ID pertences a <i>res</i>}<br>
+  }<br>
+  </p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">4) Nivel de ocupación del hospital (2 puntos)</h3>
+  Queremos saber qué porcentaje de ocupación de camas hay en el hospital. 
+  El hospital se representa por una matriz en donde las filas son los pisos, y las columnas son las camas.
+  Los valores de la matriz son booleanos que indican si la cama está ocupada o no. Si el valor es verdadero (True) indica que la cama está ocupada.
+  
+  Se nos pide programar en Python una función que devuelve una secuencia de reales, indicando la proporción de camas ocupadas en cada piso.
+
+  <p> problema nivel_de_ocupacion(<i>camas_por_piso</i>:seq⟨seq⟨Bool⟩⟩) : seq⟨R⟩ {<br>
+    &nbsp; <strong>requiere:</strong> {Todos los pisos tienen la misma cantidad de camas.} <br>
+    &nbsp; <strong>requiere:</strong> {Hay por lo menos 1 piso en el hospital.} <br>
+    &nbsp; <strong>requiere:</strong> {Hay por lo menos una cama por piso.} <br>
+    
+    &nbsp; <strong>asegura:</strong> {|<i>res</i>| = |<i>camas_por_piso</i>|} <br>
+    &nbsp; <strong>asegura:</strong> {Para todo 0<= i < |res| se cumple que res[i] es igual a la cantidad de camas ocupadas del piso i dividido el total de camas del piso i)}
+    <br>
+      }<br>
+      </p>
+  
+ 
+<hr style="width: 100%;">
+  <h3 style="color:#1A5276">5) Preguntas teóricas (2 puntos)</h3>
+  
+  <p>Conteste marcando la opción correcta.</p>
+    
+      <h4 style="color:#1A5276">A) ¿Qué es una variable con 'scope local' en Python?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_1" id="AAopcion1" value="1" />
+	      <label for="AAopcion1">Una variable definida fuera de cualquier función y accesible en todo el programa.</label> <br>
+	  <input type="radio" name="mchoice_1" id="AAopcion2" value="2" />
+	      <label for="AAopcion2">Una variable definida dentro de una función, que solo puede ser utilizada dentro de esa función.</label> <br>
+	  <input type="radio" name="mchoice_1" id="AAopcion3" value="3" />
+	      <label for="AAopcion3">Una variable que puede ser utilizada en cualquier módulo importado.</label> <br>
+	  </p>
+
+
+      <h4 style="color:#1A5276">B) ¿Qué es una estructura de control en Python?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_2" id="ABopcion1" value="1" />
+	      <label for="ABopcion1">Una herramienta que permite la ejecución condicional y repetitiva de bloques de código.</label> <br>
+	  <input type="radio" name="mchoice_2" id="ABopcion2" value="2" />
+	      <label for="ABopcion2">Un tipo especial de variable que almacena datos complejos.</label> <br>
+	  <input type="radio" name="mchoice_2" id="ABopcion3" value="3" />
+	      <label for="ABopcion3">Una librería utilizada para manipular archivos en el sistema operativo.</label> <br>
+	  </p>
+
+      <h4 style="color:#1A5276">C) ¿Qué representa un nodo en un Control Flow Graph?  (0.5 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_3" id="ACopcion1" value="1" />
+	      <label for="ACopcion1">Una variable utilizada en el programa.</label> <br>
+	  <input type="radio" name="mchoice_3" id="ACopcion2" value="2" />
+	      <label for="ACopcion2">Una condición lógica o una instrucción en el código.</label> <br>
+	  <input type="radio" name="mchoice_3" id="ACopcion3" value="3" />
+	      <label for="ACopcion3">Un archivo de datos externo.</label> <br>
+	  </p>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">Adjunta el archivo con tu solución:</h3>
+  <p><b style="color:red">Solo se puede adjuntar 1 archivo de extensión .py. En caso de haber desarrollado tests propios, no deben ser entregados.</b></p>
+  
+  <label for="archivo">Seleccionar archivo a enviar:</label>
+  <input type="file" id="archivo" name="archivo" required accept=".py,text/x-python"/>
+
+  <input type="submit" value="Enviar"
+        style= "background-color: #1A5276; border-radius: 5px;
+                margin-top:10px;padding: 10px 150px;color: #FFFFFF;
+                font-size: 20px;cursor: pointer; width:100%" >
+
+</form>
+</div>
+<script>
+  function validaciones(event) {
+    var confirmacion = confirm("Confirmo que revisé que compila el código, seleccioné las respuestas multiple choice y que quiero entregar mi examen");
+    if (!confirmacion) {
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      }
+      event.returnValue = true;
+      return true;
+  }
+
+// registro una funcion para mostrar el archivo cuando se adjunta.
+// de esa forma evitamos que se adjunten otros archivos por error
+document
+  .getElementById('archivo')
+  .addEventListener(
+      'change',
+      function () {
+          var fr = new FileReader();
+          fr.onload = function () {
+              alert(this.result);
+          };
+          fr.readAsText(this.files[0]);
+      }
+  );
+
+// para forzar a bajar el template de hunit y que no se pueda abrir en un nuevo tab
+// (el browser intenta mostrar el codigo como HTML y el formato se ve raro)
+function forceDownload(url, filename) {
+  fetch(url).then(function(t) {
+    return t.blob().then((b) => {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(b);
+      a.setAttribute("download", filename);
+      a.click();
+    });
+  });
+}
+</script>
+</body>
+
+</html>
+

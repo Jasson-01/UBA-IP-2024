@@ -1,0 +1,206 @@
+<html>
+<head>
+  <link rel="icon" href="data:,">
+  <link href="css/style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <style>
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .conditions {
+        margin-left: 20px;
+    }
+    p {
+      text-align: justify
+    }
+</style>
+</head>
+
+<body style="width: 50%;margin: 1% auto;">
+
+<div>
+
+<h1> Parcial Python - Tema 1 </h1>
+
+<h2> Importante </h2>
+
+<ul>
+  <li>El parcial se aprueba con 6 puntos</li>
+  <li>Utilizar <a href="#" onclick="forceDownload('/parcial/template_t1.py', 'template_t1.py')">este</a> archivo fuente de base para la programación. Ya cuenta con los def y las signaturas correctas.</li>
+  <li>Lista de funciones permitidas <a href="/static/python_permitidas.html">aca</a></li>
+  <li>Para testear el código pueden usar <a href="#" onclick="forceDownload('/parcial/tema1-test.py', 'tema1-test.py')">este</a> archivo que ya cuenta con todo lo necesario para desarrollar sus propios tests (este archivo no se entrega)</li>
+  <li><b style="color:red">Para aprobar el parcial es requisito indispensable que todos los programas pasen los tests del archivo del punto anterior</b></li>
+</ul>
+
+<form name="form1" action="/submit_examen" method="post" enctype="multipart/form-data" onsubmit="return validaciones(event)">
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">1) Juego del gallina (3 puntos)</h3>
+
+  <p>El juego del gallina es una competición en la que dos participantes conducen un vehículo en dirección al del contrario; si alguno se desvía de la trayectoria de choque pierde y es humillado por comportarse como un "gallina". Se hizo un torneo para ver quién es el menos gallina. Juegan todos contra todos una vez y van sumando puntos, o restando. Si dos jugadores juegan y se chocan entre sí, entonces pierde cada uno 5 puntos por haberse dañado. Si ambos jugadores se desvían, pierde cada uno 10 puntos por gallinas. Si uno no se desvía y el otro sí, el gallina pierde 15 puntos por ser humillado y el ganador suma 10 puntos! En este torneo, cada persona que participa tiene una estrategia predefinida para competir: o siempre se devía, o nunca lo hace. Se debe programar la función 'torneo_de_gallinas' que recibe un diccionario (donde las claves representan los nombres de los participantes que se anotaron en el torneo, y los valores sus respectivas estrategias) y devuelve un diccionario con los puntajes obtendidos por cada jugador.</p>
+
+  problema torneo_de_gallinas (in <i>estrategias</i>: dict⟨String,String⟩) : dict⟨String,Z⟩ {<br>
+    &nbsp; <strong>requiere:</strong> {<i>estrategias</i> tiene por lo menos 2 elementos (jugadores)}<br>
+    &nbsp; <strong>requiere:</strong> {Las claves de <i>estrategias</i> tienen longitud mayor a <i>0</i>}<br>
+    &nbsp; <strong>requiere:</strong> {Los valores de <i>estrategias</i> sólo pueden ser los strings "me desvio siempre" ó "me la banco y no me desvio"}<br>
+    &nbsp; <strong>asegura:</strong> {Las claves de res y las claves de estrategias son iguales}<br>
+    &nbsp; <strong>asegura:</strong> {para cada jugador <i>p</i> perteneciente a <i>claves(estrategias)</i>, <i>res[p]</i> es igual a la cantidad de puntos que obtuvo al finalizar el torneo, dado que jugó una vez contra cada otro	jugador}<br>
+  }<br>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">2) Cola en el Banco (1 puntos)</h3>
+
+  <p>En el banco ExactaBank los clientes hacen cola para ser atendidos por un representante. Los clientes son representados por las tuplas (nombre, tipo afiliado) donde la primera componente es el nombre y el tipo afiliado puede ser "comun" o "vip".
+  <br>
+  Se nos pide implementar una función en python que dada una cola de clientes del banco, devuelva una nueva cola con los mismos clientes pero en donde los clientes vip estan primero que los clientes comunes manteniendo el orden original de los clientes vips y los comunes entre sí.</p>
+  <br>
+  
+  problema reordenar_cola_priorizando_vips (in <i>filaClientes</i>: Cola⟨String x String⟩) : Cola⟨String⟩ {<br>
+    &nbsp; <strong>requiere:</strong> {La longitud de los valores de la primera componente de las tuplas de la cola <i>filaClientes</i> es mayor a <i>0</i>}<br>
+    &nbsp; <strong>requiere:</strong> {Los valores de la segunda componente de las tuplas de la cola <i>filaClientes</i> son "comun" o "vip" }<br>
+    &nbsp; <strong>requiere:</strong> {No hay dos tuplas en <i>filaClientes</i> que tengan la primera componente iguales entre sí }<br>
+    &nbsp; <strong>asegura:</strong> {todo valor de <i>res</i> aparece como primera componente de alguna tupla de <i>filaClientes</i>}<br>
+    
+    &nbsp; <strong>asegura:</strong> {|<i>res</i>| = |<i>filaCliente</i>|}<br>
+    &nbsp; <strong>asegura:</strong> {<i>res</i> no tiene elementos repetidos}<br>
+    &nbsp; <strong>asegura:</strong> {No hay ningun cliente "comun" antes que un "vip" en <i>res</i>}<br>
+    &nbsp; <strong>asegura:</strong> {Para todo cliente <i>c1</i> y cliente <i>c2</i> de tipo "comun" pertenecientes a <i>filaClientes</i> si <i>c1</i> aparece antes que <i>c2</i> en <i>filaClientes</i> entonces el nombre de <i>c1</i> aparece antes que el nombre de <i>c2</i> en <i>res</i>}<br>
+    &nbsp; <strong>asegura:</strong> {Para todo cliente <i>c1</i> y cliente <i>c2</i> de tipo "vip" pertenecientes a <i>filaClientes</i> si <i>c1</i> aparece antes que <i>c2</i> en <i>filaClientes</i> entonces el nombre de <i>c1</i> aparece antes que el nombre de <i>c2</i> en <i>res</i>}<br>
+
+  }<br>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">3) Sufijos que son palíndromos (2 puntos)</h3>
+  <p>Decimos que una palabra es palíndromo si se lee igual de izquierda a derecha que de derecha a izquierda. Se nos pide programar en python la siguiente función:</p>
+
+  problema cuantos_sufijos_son_palindromos(in <i>texto</i>:String) : Z {<br>
+    &nbsp; <strong>requiere:</strong> - <br>
+    &nbsp; <strong>asegura:</strong> {<i>res</i> es igual a la cantidad de palíndromos que hay en el conjunto de sufijos de <i>texto</i>}<br>
+  }<br>
+  
+  Nota: un sufijo es una subsecuencia de texto que va desde una posición cualquiera hasta el al final de la palabra. Ej: "Diego", el conjunto de sufijos es: "Diego", "iego","ego","go", "o". Para este ejercicio no consideraremos a "" como sufijo de ningun texto.
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">4) Ta-Te-Ti-Facilito (2 puntos)</h3>
+  <p> Ana y Beto juegan al Ta-Te-Ti-Facilito. El juego es en un tablero cuadrado de lado entre 5 y 10. Cada jugador va poniendo su ficha en cada turno. Juegan intercaladamente y comienza Ana. Ana pone siempre una 'X' en su turno y Beto pone una 'O' en el suyo. Gana la persona que logra poner 3 fichas suyas consecutivas en forma vertical. Si el tablero está completo y no ganó nadie, entonces se declara un empate. El tablero comienza vacío, representado por ' ' en cada posición. <br>
+    Notar que dado que juegan por turnos y comienza Ana poniendo una 'X' se cumple que la cantidad de 'X' es igual a la cantidad de 'O' o bien la cantidad de 'X' son uno más que la cantidad de 'O'. <br>
+    Se nos pide implementar una función en python 'problema quien_gano_el_tateti_facilito' que determine si ganó alguno, o si Beto hizo trampa (puso una 'O' cuando Ana ya había ganado).
+  </p>
+
+problema quien_gano_el_tateti_facilito(in <i>tablero</i>:seq⟨seq⟨Char⟩) : Z {<br>
+  &nbsp; <strong>requiere:</strong> {<i>tablero</i> es una matriz cuadrada}<br>
+  &nbsp; <strong>requiere:</strong> {<i>5<=|tablero[0]|<= 10</i>}<br>
+  &nbsp; <strong>requiere:</strong> {<i>tablero</i> sólo tiene 'X', 'O' y ' ' (espacio vacío) como elementos}<br>
+  &nbsp; <strong>requiere:</strong> {En <i>tablero</i> la cantidad de 'X' es igual a la cantidad de 'O' o bien la cantidad de 'X' es uno más que la cantidad de 'O'}<br>
+  &nbsp; <strong>asegura:</strong> {<i>res</i> = 1 <==> hay tres 'X' consecutivas en forma vertical(misma columna) y no hay tres 'O' consecutivas en forma vertical(misma columna) }<br>
+  &nbsp; <strong>asegura:</strong> {<i>res</i> = 2 <==> hay tres 'O' consecutivas en forma vertical (misma columna) y no hay tres 'X' consecutivas en forma vertical(misma columna) }<br>
+  &nbsp; <strong>asegura:</strong> {<i>res</i> = 0 <==> no hay tres 'O' ni hay tres 'X' consecutivas en forma vertical}<br>
+  &nbsp; <strong>asegura:</strong> {<i>res</i> = 3 <==> hay tres 'X' y hay tres 'O' consecutivas en forma vertical (evidenciando que beto hizo trampa)}<br>
+<br>
+}<br>
+ 
+<hr style="width: 100%;">
+  <h3 style="color:#1A5276">5) Preguntas teóricas (2 puntos)</h3>
+  
+  <p>Conteste marcando la opción correcta.</p>
+    
+      <h4 style="color:#1A5276">A) ¿Qué es una variable en Python?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_1" id="BAopcion1" value="1" />
+	      <label for="BAopcion1">Una función que devuelve valores aleatorios.</label> <br>
+	  <input type="radio" name="mchoice_1" id="BAopcion2" value="2" />
+	      <label for="BAopcion2">Un contenedor para almacenar datos que puede cambiar durante la ejecución del programa.</label> <br>
+	  <input type="radio" name="mchoice_1" id="BAopcion3" value="3" />
+	      <label for="BAopcion3">Un tipo de dato que solo puede contener números enteros.</label> <br>
+	  </p>
+
+
+      <h4 style="color:#1A5276">B) ¿Cuál es la función de un ciclo en Python?  (0.75 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_2" id="BBopcion1" value="1" />
+	      <label for="BBopcion1">Ejecutar un conjunto de instrucciones una sola vez.</label> <br>
+	  <input type="radio" name="mchoice_2" id="BBopcion2" value="2" />
+	      <label for="BBopcion2">Ejecutar repetidamente un conjunto de instrucciones hasta que una condición se evalúe como falsa.</label> <br>
+	  <input type="radio" name="mchoice_2" id="BBopcion3" value="3" />
+	      <label for="BBopcion3">Definir una constante que no puede ser cambiada.</label> <br>
+	  </p>
+
+      <h4 style="color:#1A5276">C) ¿Cuál es la finalidad de un Control Flow Graph en testing?  (0.5 punto)</h4>
+
+	 <p>
+	  <input type="radio" name="mchoice_3" id="BCopcion1" value="1" />
+	      <label for="BCopcion1">Identificar todas las posibles salidas de un programa.</label> <br>
+	  <input type="radio" name="mchoice_3" id="BCopcion2" value="2" />
+	      <label for="BCopcion2">Visualizar todos los posibles caminos de ejecución para asegurar la cobertura completa del código.</label> <br>
+	  <input type="radio" name="mchoice_3" id="BCopcion3" value="3" />
+	      <label for="BCopcion3">Determinar los puntos de entrada y salida del programa.</label> <br>
+	  </p>
+
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">Adjunta el archivo con tu solución:</h3>
+  <p><b style="color:red">Solo se puede adjuntar 1 archivo de extensión .py. En caso de haber desarrollado tests propios, no deben ser entregados.</b></p>
+  
+  <label for="archivo">Seleccionar archivo a enviar:</label>
+  <input type="file" id="archivo" name="archivo" required accept=".py,text/x-python"/>
+
+  <input type="submit" value="Enviar"
+        style= "background-color: #1A5276; border-radius: 5px;
+                margin-top:10px;padding: 10px 150px;color: #FFFFFF;
+                font-size: 20px;cursor: pointer; width:100%" >
+
+</form>
+</div>
+<script>
+  function validaciones(event) {
+    var confirmacion = confirm("Confirmo que revisé que compila el código, seleccioné las respuestas multiple choice y que quiero entregar mi examen");
+    if (!confirmacion) {
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      }
+      event.returnValue = true;
+      return true;
+  }
+
+// registro una funcion para mostrar el archivo cuando se adjunta.
+// de esa forma evitamos que se adjunten otros archivos por error
+document
+  .getElementById('archivo')
+  .addEventListener(
+      'change',
+      function () {
+          var fr = new FileReader();
+          fr.onload = function () {
+              alert(this.result);
+          };
+          fr.readAsText(this.files[0]);
+      }
+  );
+
+// para forzar a bajar el template de hunit y que no se pueda abrir en un nuevo tab
+// (el browser intenta mostrar el codigo como HTML y el formato se ve raro)
+function forceDownload(url, filename) {
+  fetch(url).then(function(t) {
+    return t.blob().then((b) => {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(b);
+      a.setAttribute("download", filename);
+      a.click();
+    });
+  });
+}
+</script>
+</body>
+
+</html>
+
