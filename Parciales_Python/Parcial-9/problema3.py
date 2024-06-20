@@ -1,7 +1,6 @@
-# Hecho por Chat GPT
 def racha_mas_larga(tiempos: list[int]) -> tuple[int, int]:
 
-    # Primera parte
+    # 1era parte
     copia_tiempos = tiempos.copy()
     comienza_indice = 0
     lista_subsecuencias = []
