@@ -1,6 +1,6 @@
 import inspect
 import unittest
-from solucion import racha_mas_larga
+from problema3 import racha_mas_larga
 
 '''
 Ayudamemoria: entre los métodos para testear están los siguientes:

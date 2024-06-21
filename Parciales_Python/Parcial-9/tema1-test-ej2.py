@@ -1,6 +1,6 @@
 import inspect
 import unittest
-from solucion import tiempo_mas_rapido
+from problema2 import tiempo_mas_rapido
 
 '''
 Ayudamemoria: entre los métodos para testear están los siguientes:

@@ -78,7 +78,7 @@ def racha_mas_larga(tiempos: list[int]) -> tuple[int, int]:
     tupla_res = (0, 0)
     longitud_maxima = 0
     for (indices, subsecuencias) in lista_subsecuencias:
-        if longitud_maxima <= len(subsecuencias):
+        if longitud_maxima < len(subsecuencias):
            longitud_maxima = len(subsecuencias)
            tupla_res = indices
     return tupla_res

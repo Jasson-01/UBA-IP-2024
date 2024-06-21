@@ -1,6 +1,6 @@
 import inspect
 import unittest
-from solucion import escape_en_solitario
+from problema4 import escape_en_solitario
 
 '''
 Ayudamemoria: entre los métodos para testear están los siguientes:

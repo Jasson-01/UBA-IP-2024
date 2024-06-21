@@ -1,6 +1,6 @@
 import inspect
 import unittest
-from solucion import promedio_de_salidas
+from problema1 import promedio_de_salidas
 
 '''
 Ayudamemoria: entre los métodos para testear están los siguientes:
