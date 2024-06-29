@@ -1,5 +1,5 @@
 from queue import Queue as Cola
-from queue import LifoQueue as Pila
+#from queue import LifoQueue as Pila
 
 
 # -------------------------------------- PROBLEM-1 --------------------------------------
@@ -64,15 +64,15 @@ def torneo_de_gallinas(estrategias: dict[str, str]) -> dict[str, int]:
                 # Ambos se desvían
                 puntajes[jugador1] -= 10
                 puntajes[jugador2] -= 10
-            elif estrategia1 == "me la banco y no me desvío" and estrategia2 == "me la banco y no me desvío":
+            elif estrategia1 == "me la banco y no me desvio" and estrategia2 == "me la banco y no me desvio":
                 # Ambos chocan
                 puntajes[jugador1] -= 5
                 puntajes[jugador2] -= 5
-            elif estrategia1 == "me desvio siempre" and estrategia2 == "me la banco y no me desvío":
+            elif estrategia1 == "me desvio siempre" and estrategia2 == "me la banco y no me desvio":
                 # Jugador1 se desvía, Jugador2 no
                 puntajes[jugador1] -= 15
                 puntajes[jugador2] += 10
-            elif estrategia1 == "me la banco y no me desvío" and estrategia2 == "me desvio siempre":
+            elif estrategia1 == "me la banco y no me desvio" and estrategia2 == "me desvio siempre":
                 # Jugador1 no se desvía, Jugador2 se desvía
                 puntajes[jugador1] += 10
                 puntajes[jugador2] -= 15
