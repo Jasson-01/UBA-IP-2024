@@ -8,6 +8,8 @@ La validación de los problemas resueltos no está verificada. Por favor, consul
 
 -Los "archivos de texto" en el cuadro princial, corresponden a la Guia8 del archivo Guias.
 
+Parciales y Guias resueltas en: https://www.cubawiki.com.ar/index.php/Introducci%C3%B3n_a_la_Programaci%C3%B3n
+
 Motivación:
 
 1ero -> https://youtu.be/gW6sw96OZeg?si=6bSZb9LMuNFkHRiL 
