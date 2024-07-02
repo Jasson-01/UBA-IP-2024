@@ -1,4 +1,4 @@
-                                      Guia_de_estudio_IP_UBA_(2024)
+                                     Guia de estudio / IP - UBA (2024)
 
 
 Guía en Constante Cambio
