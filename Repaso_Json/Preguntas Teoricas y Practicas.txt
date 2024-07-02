@@ -1,0 +1,388 @@
+Pregunta 1: Testing de Caja Blanca (1 punto)
+Explica brevemente qué es el Control Flow Graph (CFG) y cómo se utiliza en el testing de caja blanca.
+
+Rpta: 
+El Control Flow Graph (CFG) es una representación gráfica de la estructura de control de un programa. El CFG muestra cómo fluye la ejecución del programa a través de diferentes instrucciones y bloques de código.
+
+El CFG es una herramienta útil en el testing de caja blanca, que es un enfoque de prueba que se basa en el análisis del código fuente y su estructura interna. El CFG ayuda a identificar caminos de ejecución en el programa y guía la generación de casos de prueba
+
+En resumen, el CFG es una representación visual de la estructura de control de un programa y se utiliza en el testing de caja blanca para diseñar casos de prueba que cubran diferentes caminos de ejecución en el código fuente
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 2: Testing de Caja Negra (1 punto)
+Describe la técnica de partición por categorías en el testing de caja negra. Proporciona un ejemplo de cómo aplicarías esta técnica para probar una función que valida contraseñas.
+
+Rpta : 
+La técnica de partición por categorías es una técnica de diseño de casos de prueba en el testing de caja negra. Se basa en dividir el conjunto de entradas en categorías o clases de equivalencia y seleccionar representantes de cada categoría para diseñar casos de prueba.
+
+En el caso de probar una función que valida contraseñas, se pueden aplicar diferentes categorías basadas en las características de las contraseñas. Aquí hay un ejemplo de cómo aplicar la técnica de partición por categorías:
+
+1. Longitud de la contraseña:
+   - Categoría 1: Contraseñas cortas (menos de 6 caracteres).
+   - Categoría 2: Contraseñas de longitud moderada (entre 6 y 12 caracteres).
+   - Categoría 3: Contraseñas largas (más de 12 caracteres).
+
+2. Composición de la contraseña:
+   - Categoría 4: Contraseñas que solo contienen letras (mayúsculas y minúsculas).
+   - Categoría 5: Contraseñas que contienen letras y números.
+   - Categoría 6: Contraseñas que contienen letras, números y caracteres especiales.
+
+3. Complejidad de la contraseña:
+   - Categoría 7: Contraseñas débiles (solo letras minúsculas o solo números).
+   - Categoría 8: Contraseñas moderadamente seguras (combinación de letras y números).
+   - Categoría 9: Contraseñas fuertes (combinación de letras, números y caracteres especiales).
+
+Con estas categorías definidas, puedes seleccionar representantes de cada categoría para diseñar casos de prueba:
+
+- Caso de prueba 1: Contraseña corta y solo letras minúsculas.
+- Caso de prueba 2: Contraseña de longitud moderada con combinación de letras y números.
+- Caso de prueba 3: Contraseña larga con combinación de letras, números y caracteres especiales.
+- Caso de prueba 4: Contraseña débil con solo números.
+- Caso de prueba 5: Contraseña fuerte con combinación de letras, números y caracteres especiales.
+
+Al diseñar casos de prueba de esta manera, se cubren diferentes categorías de contraseñas y se puede verificar si la función de validación de contraseñas maneja correctamente cada categoría, detectando posibles errores o vulnerabilidades.
+
+Es importante tener en cuenta que estas categorías son solo un ejemplo y pueden variar según los requisitos y el contexto específico del sistema que se está probando.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 3: Factores de un Programa (1 punto)
+Menciona tres factores que pueden afectar la calidad y mantenibilidad de un programa. Explica cada uno de ellos.
+
+Rpta : 
+
+Existen varios factores que pueden afectar la calidad y mantenibilidad de un programa. A continuación, mencionaré tres de ellos y los explicaré brevemente:
+
+1. Diseño de software deficiente: Un diseño de software deficiente puede afectar negativamente la calidad y mantenibilidad de un programa. Un diseño inadecuado puede hacer que el programa sea difícil de entender, modificar y mantener en el futuro. Un diseño pobre puede llevar a la presencia de código duplicado, acoplamiento excesivo, falta de modularidad y escalabilidad limitada, lo que dificulta las mejoras y el mantenimiento del programa a largo plazo.
+
+2. Falta de pruebas adecuadas: La falta de pruebas adecuadas puede comprometer la calidad y la capacidad de mantenimiento de un programa. Las pruebas son esenciales para identificar y corregir errores en el software, así como para garantizar que el programa funcione según lo esperado. La ausencia de pruebas suficientes puede llevar a la presencia de errores no detectados, lo que puede afectar la estabilidad y la calidad del programa. Además, sin pruebas adecuadas, el mantenimiento del programa puede volverse complicado, ya que los cambios y las mejoras pueden introducir errores no deseados.
+
+3. Falta de documentación y comentarios: La falta de documentación y comentarios claros en el código fuente puede dificultar la comprensión y el mantenimiento del programa. La documentación y los comentarios bien escritos ayudan a los desarrolladores a comprender rápidamente el propósito y el funcionamiento del código, lo que facilita su modificación y mejora. Sin una documentación adecuada, puede ser difícil para los programadores nuevos o para los propios desarrolladores del programa entender y mantener el código, lo que puede conducir a errores y problemas en el futuro.
+
+Estos son solo algunos ejemplos de factores que pueden afectar la calidad y mantenibilidad de un programa. Es importante abordar estos problemas durante el desarrollo y mantenimiento del software para asegurar un programa de alta calidad y fácilmente mantenible.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 4: Clasificación de Elecciones (1 punto)
+Explica en qué consiste la clasificación de elecciones en el contexto de la prueba de software. Menciona al menos tres criterios utilizados para clasificar las pruebas de software.
+Rpta : 
+
+La clasificación de elecciones, también conocida como clasificación de pruebas de software, es el proceso de agrupar y categorizar las pruebas de software en diferentes grupos según diversos criterios. Estos criterios ayudan a organizar y gestionar las pruebas de manera más efectiva. A continuación, se explican tres criterios comunes utilizados para clasificar las pruebas de software:
+
+1. Criterio de cobertura: Este criterio clasifica las pruebas en función de la cobertura de las diferentes partes del software que se están probando. Algunos ejemplos de cobertura comunes son la cobertura de instrucciones, cobertura de ramas, cobertura de decisiones y cobertura de condiciones. La clasificación basada en el criterio de cobertura ayuda a garantizar que el software se someta a pruebas exhaustivas y que se evalúe si se han ejecutado todas las rutas posibles en el código.
+
+2. Criterio de prioridad: Este criterio clasifica las pruebas en función de su importancia o prioridad relativa. Las pruebas se pueden clasificar como críticas, importantes o de baja prioridad según el impacto que puedan tener en el sistema si se produce un error. Esto permite asignar recursos y tiempo de prueba de manera más efectiva, centrándose en las áreas más críticas del software y asegurando que se realicen pruebas adecuadas en esas áreas.
+
+3. Criterio de tipo de prueba: Este criterio clasifica las pruebas en función del tipo de actividad que se realiza durante la prueba. Algunos ejemplos de tipos de prueba comunes incluyen pruebas unitarias, pruebas de integración, pruebas de sistema, pruebas de aceptación, pruebas de rendimiento y pruebas de seguridad. La clasificación basada en el tipo de prueba ayuda a asegurar que se realicen diferentes tipos de pruebas para abordar diferentes aspectos del software, desde la funcionalidad hasta el rendimiento y la seguridad.
+
+Estos son solo tres criterios comunes utilizados para clasificar las pruebas de software. Otros criterios pueden incluir la clasificación por tiempo (pruebas planificadas, pruebas ad hoc), por alcance (pruebas funcionales, pruebas no funcionales) o por técnica de prueba (pruebas basadas en caja negra, pruebas basadas en caja blanca). La clasificación de pruebas ayuda a organizar y gestionar eficientemente el proceso de prueba de software.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 5: Pilas y Colas (1 punto)
+Describe brevemente las características y el funcionamiento de las estructuras de datos de pilas y colas. Proporciona un ejemplo de una situación en la que sería adecuado utilizar cada una de ellas.
+
+Rpta : 
+Las pilas y las colas son estructuras de datos lineales utilizadas para organizar y manipular elementos. A continuación, se describen brevemente las características y el funcionamiento de cada una:
+
+Pila:
+- Una pila es una estructura de datos en la que los elementos se agregan y se eliminan en una forma conocida como LIFO (Last-In, First-Out), es decir, el último elemento agregado es el primero en ser eliminado.
+- Los elementos se agregan y eliminan solo desde un extremo llamado "top" o "cima".
+- Las operaciones principales en una pila son "push" (agregar un elemento a la cima de la pila) y "pop" (eliminar el elemento en la cima de la pila).
+- Las pilas son útiles cuando se necesita mantener un historial de acciones realizadas y deshacerlas en orden inverso, como en un editor de texto o en la navegación de páginas web hacia atrás.
+
+Ejemplo de uso de una pila: 
+- Evaluar expresiones matemáticas en notación polaca inversa.
+- Implementar el historial de navegación en un navegador web.
+- Realizar operaciones de deshacer/rehacer en un editor de texto.
+
+Cola:
+- Una cola es una estructura de datos en la que los elementos se agregan al final y se eliminan del principio, siguiendo el principio conocido como FIFO (First-In, First-Out), es decir, el primer elemento en ser agregado es el primero en ser eliminado.
+- Los elementos se agregan en un extremo llamado "rear" o "final de la cola", y se eliminan desde el otro extremo llamado "front" o "frente de la cola".
+- Las operaciones principales en una cola son "enqueue" (agregar un elemento al final de la cola) y "dequeue" (eliminar el elemento del frente de la cola).
+- Las colas son útiles cuando se necesita procesar elementos en el orden en que llegaron, como en el procesamiento de solicitudes o la gestión de tareas en un sistema.
+
+Ejemplo de uso de una cola:
+- Implementar una cola de impresión en un sistema de impresión compartido.
+- Administrar las solicitudes de servicio en un centro de atención telefónica.
+- Realizar operaciones de encolar y desencolar en un algoritmo de búsqueda en anchura (BFS).
+
+En resumen, las pilas se utilizan cuando se necesita un acceso LIFO a los elementos, mientras que las colas se utilizan cuando se necesita un acceso FIFO. La elección entre pilas y colas depende de la lógica de procesamiento y el orden en el que se deben tratar los elementos.
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 6: Diccionarios en Python (1 punto)
+Explica qué es un diccionario en Python y cómo se utiliza. Proporciona un ejemplo de cómo crear y acceder a los elementos de un diccionario.
+Rpta : 
+
+
+En Python, un diccionario es una estructura de datos mutable que permite almacenar y recuperar elementos mediante una clave única asociada a cada valor. A diferencia de otras estructuras de datos, como las listas o las tuplas, los diccionarios no están ordenados.
+
+Para crear un diccionario en Python, se utilizan llaves `{}` o la función `dict()`. Cada elemento del diccionario consiste en un par clave-valor, donde la clave actúa como un identificador único y el valor es el dato asociado a esa clave. Las claves pueden ser de cualquier tipo inmutable, como cadenas, números o tuplas, mientras que los valores pueden ser de cualquier tipo, incluyendo otros diccionarios.
+
+Aquí tienes un ejemplo de cómo crear y acceder a los elementos de un diccionario:
+
+```python
+# Crear un diccionario
+diccionario = {"nombre": "Juan", "edad": 25, "ciudad": "México"}
+
+# Acceder a elementos del diccionario
+print(diccionario["nombre"])  # Acceder al valor asociado a la clave "nombre"
+print(diccionario.get("edad"))  # Otra forma de acceder al valor usando el método get()
+
+# Modificar un valor existente
+diccionario["edad"] = 30
+
+# Agregar un nuevo elemento
+diccionario["ocupacion"] = "Ingeniero"
+
+# Recorrer los elementos del diccionario
+for clave, valor in diccionario.items():
+    print(clave, ":", valor)
+```
+
+En este ejemplo, se crea un diccionario con tres pares clave-valor: "nombre", "edad" y "ciudad". Luego, se accede a los elementos utilizando la clave, ya sea mediante el operador de indexación `[]` o el método `get()`. También se muestra cómo modificar un valor existente y agregar un nuevo elemento al diccionario. Por último, se recorren los elementos del diccionario utilizando el método `items()`.
+
+Los diccionarios en Python son ampliamente utilizados para almacenar y acceder a datos de forma eficiente, ya que permiten una búsqueda rápida mediante las claves. Son especialmente útiles cuando se necesita asociar valores con identificadores únicos o cuando se requiere una estructura de datos que se pueda modificar fácilmente.
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 7: Operaciones en Python (1 punto)
+Menciona cinco operaciones aritméticas y cinco operaciones de comparación en Python.
+Rpta : 
+
+Operaciones aritméticas en Python:
+
+1. Suma: Se utiliza el operador `+` para sumar dos valores.
+2. Resta: Se utiliza el operador `-` para restar un valor de otro.
+3. Multiplicación: Se utiliza el operador `*` para multiplicar dos valores.
+4. División: Se utiliza el operador `/` para dividir un valor por otro.
+5. Módulo: Se utiliza el operador `%` para obtener el resto de la división entre dos valores.
+
+Operaciones de comparación en Python:
+
+1. Igualdad: Se utiliza el operador `==` para verificar si dos valores son iguales.
+2. Diferencia: Se utiliza el operador `!=` para verificar si dos valores son diferentes.
+3. Mayor que: Se utiliza el operador `>` para verificar si un valor es mayor que otro.
+4. Menor que: Se utiliza el operador `<` para verificar si un valor es menor que otro.
+5. Mayor o igual que: Se utiliza el operador `>=` para verificar si un valor es mayor o igual que otro.
+6. Menor o igual que: Se utiliza el operador `<=` para verificar si un valor es menor o igual que otro.
+
+Es importante destacar que las operaciones aritméticas se aplican a valores numéricos, mientras que las operaciones de comparación se utilizan para evaluar condiciones y producir un resultado booleano (verdadero o falso) en función de la relación entre los valores comparados.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 8: Variables Locales y Globales (1 punto)
+Explica la diferencia entre variables locales y variables globales en el contexto de la programación. ¿Cuándo se utilizaría cada tipo de variable?
+Rpta : 
+
+En cuanto a cuándo utilizar cada tipo de variable:
+
+Variables locales: Se deben utilizar cuando se necesita almacenar datos que solo son relevantes dentro de un ámbito específico, como el resultado temporal de una función o el estado de un bucle. Las variables locales ayudan a mantener un mejor control sobre el flujo y la lógica del programa y permiten un uso más seguro y modular de los datos.
+
+Variables globales: Se utilizan cuando se necesita acceder a un valor desde diferentes partes del programa y se requiere que la variable mantenga su estado a lo largo del tiempo. Sin embargo, se debe tener cuidado al usar variables globales, ya que pueden llevar a una mayor complejidad y dificultar el mantenimiento del código. Es recomendable utilizarlas con moderación y solo cuando sea realmente necesario.
+
+En general, se recomienda priorizar el uso de variables locales sobre las globales, ya que fomentan la encapsulación y la modularidad del código, y ayudan a prevenir errores y conflictos. Las variables globales se deben utilizar con precaución y solo cuando sea absolutamente necesario compartir datos entre múltiples partes del programa.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pregunta 9: Listas de Listas en Python (1 punto)
+Explica cómo se pueden crear y acceder a los elementos de una lista de listas en Python. Proporciona un ejemplo de cómo acceder a un elemento específico.
+
+
+
+Rpta: 
+En Python, una lista de listas es una estructura de datos que permite almacenar múltiples listas dentro de una lista principal. Cada lista interna se trata como un elemento individual dentro de la lista principal.
+
+Para crear una lista de listas, puedes declarar una lista principal y asignarle las listas internas como elementos. Aquí tienes un ejemplo:
+
+```python
+lista_de_listas = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+En este ejemplo, `lista_de_listas` es una lista que contiene tres listas internas: `[1, 2, 3]`, `[4, 5, 6]` y `[7, 8, 9]`.
+
+Para acceder a un elemento específico de una lista de listas, puedes utilizar la notación de corchetes `[ ]`. El primer índice se refiere a la posición de la lista interna dentro de la lista principal, y el segundo índice se refiere a la posición del elemento dentro de la lista interna. Aquí tienes un ejemplo:
+
+```python
+# Acceder al elemento en la segunda lista interna y la tercera posición
+elemento = lista_de_listas[1][2]
+print(elemento)  # Salida: 6
+```
+
+En este caso, `lista_de_listas[1]` se refiere a la segunda lista interna `[4, 5, 6]`, y `lista_de_listas[1][2]` se refiere al elemento en la tercera posición de esa lista interna, que es `6`.
+
+Puedes utilizar esta notación de corchetes para acceder y modificar cualquier elemento dentro de la lista de listas, siempre teniendo en cuenta los índices correspondientes a cada nivel de anidamiento.
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 10: Arrays en Python (1 punto)
+Describe brevemente los arrays en Python. ¿Cuál es la principal diferencia entre un array y una lista en Python?
+
+Rpta: 
+En Python, los arrays son estructuras de datos utilizadas para almacenar elementos del mismo tipo en una secuencia contigua en la memoria. Son similares a las listas en términos de almacenar múltiples elementos, pero tienen algunas diferencias clave.
+
+La principal diferencia entre un array y una lista en Python es que los arrays están diseñados para almacenar elementos del mismo tipo de datos, mientras que las listas pueden contener elementos de diferentes tipos.
+ Los arrays son más eficientes en cuanto al uso de memoria y rendimiento cuando se trata de operaciones numéricas y manipulación de grandes cantidades de datos homogéneos.
+
+Los arrays en Python se pueden crear utilizando el módulo array. Para usarlo, debes importar el módulo y luego crear un objeto de array especificando el tipo de datos que contendrá y los elementos que deseas almacenar. Algunos de los tipos de datos comunes utilizados en los arrays son int, float, str, entre otros.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 1: Especificación de Problemas (1 punto)
+Define formalmente el siguiente problema: "Escribir una función en Python que encuentre el máximo común divisor (MCD) de dos números enteros".
+Rpta : 
+
+
+---
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 2: Lógica Proposicional (1 punto)
+Dada la siguiente expresión lógica: "p ∨ (q ∧ r)". Construye su tabla de verdad.
+Rpta : 
+
+---
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 3: Lógica Binaria y Ternaria (1 punto)
+¿Cuál es la diferencia principal entre la lógica binaria y la lógica ternaria? Proporciona un ejemplo de una operación que pueda ser representada en lógica ternaria pero no en lógica binaria.
+Rpta : 
+
+----
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 4: Cuantificadores (1 punto)
+Especifica formalmente la siguiente afirmación utilizando cuantificadores: "Todos los números enteros son mayores que cero".
+Rpta : 
+
+∀x : x es un número entero → x > 0
+
+Esto se lee como "Para todo x, si x es un número entero, entonces x es mayor que cero".
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 5: Especificación de Predicados (1 punto)
+Especifica formalmente el siguiente predicado: "El número entero x es divisible por el número entero y".
+Rpta : 
+
+---
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 6: Relaciones de Fuerza entre Predicados (1 punto)
+Describe brevemente qué significa que un predicado A sea más fuerte que un predicado B.
+Rpta : 
+
+En el contexto de la lógica de predicados, se dice que un predicado A es más fuerte que otro predicado B cuando A implica lógicamente a B. Esto significa que siempre que el predicado A sea verdadero, el predicado B también debe ser verdadero.
+
+Formalmente, si A implica B, se denota como A ⇒ B. La implicación significa que si todas las condiciones que hacen que A sea verdadero se cumplen, entonces B también debe ser verdadero.
+
+Cuando se dice que A es más fuerte que B, implica que A es más restrictivo o más específico que B. El predicado A tiene condiciones adicionales o restricciones que hacen que sea más difícil de cumplir que el predicado B.
+
+En términos intuitivos, si un predicado A es más fuerte que otro predicado B, podemos afirmar que A es una afirmación más sólida o más precisa que B, ya que impone condiciones más estrictas o más específicas para su veracidad.
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 7: Programación Funcional e Imperativa (1 punto)
+Explica brevemente las diferencias entre la programación funcional y la programación imperativa.
+Rpta : 
+La programación funcional y la programación imperativa son dos paradigmas de programación diferentes, con enfoques distintos para resolver problemas y estructurar el código.
+
+La programación imperativa se centra en describir cómo se deben realizar las operaciones paso a paso, utilizando una secuencia de instrucciones que modifican el estado del programa. Se basa en el concepto de variables y cambios de estado, donde se definen variables, se realizan asignaciones y se utilizan estructuras de control como bucles y condicionales. El foco principal de la programación imperativa es la manipulación del estado y la ejecución de instrucciones en un orden específico.
+
+Por otro lado, la programación funcional se centra en la evaluación de expresiones y en la composición de funciones. Se basa en el concepto de funciones puras, que no tienen efectos secundarios y siempre producen el mismo resultado para los mismos valores de entrada. La programación funcional se basa en la idea de que los programas son construidos mediante la combinación de funciones, y se enfoca en la inmutabilidad de los datos y en evitar cambios de estado. Además, la recursión se utiliza como un mecanismo fundamental de iteración.
+
+En resumen, algunas de las diferencias clave entre la programación funcional y la programación imperativa son:
+
+1. Estado y cambios: La programación imperativa se centra en el cambio de estado a través de asignaciones y manipulación de variables, mientras que la programación funcional se enfoca en evitar el cambio de estado y en la evaluación de expresiones.
+
+2. Efectos secundarios: La programación imperativa permite efectos secundarios, como la modificación de variables globales o la impresión en la consola, mientras que la programación funcional busca minimizar o eliminar los efectos secundarios para tener funciones puras.
+
+3. Enfoque en la expresión vs. instrucción: La programación funcional se centra en la evaluación de expresiones y en la combinación de funciones, mientras que la programación imperativa se basa en la ejecución de instrucciones paso a paso.
+
+Ambos enfoques tienen sus propias ventajas y desventajas, y la elección entre programación funcional e imperativa depende del problema a resolver y de las preferencias del programador.
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 8: Implementación de Funciones en Python y Haskell (1 punto)
+Implementa la siguiente función en Python y en Haskell:
+Rpta : 
+Python:
+
+def sumar_lista(lista):
+    """Recibe una lista de números enteros y devuelve la suma de todos los elementos."""
+    # Tu implementación aquí
+
+
+
+
+
+Haskell:
+sumarLista :: [Int] -> Int
+-- Tu implementación aquí
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 9: Pattern Matching en Haskell (1 punto)
+Explica qué es el pattern matching y cómo se utiliza en Haskell. Proporciona un ejemplo de su uso.
+Rpta : 
+
+
+El pattern matching es una característica fundamental en el lenguaje de programación Haskell. Permite hacer coincidir la estructura de los datos con patrones específicos y extraer información de forma concisa y elegante.
+
+En Haskell, el pattern matching se utiliza principalmente con las definiciones de funciones, donde se especifican distintos patrones y las acciones a realizar en función de qué patrón coincide con los datos de entrada.
+
+Un ejemplo sencillo de pattern matching en Haskell es la definición de una función para calcular el factorial de un número:
+
+```haskell
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+```
+
+En este ejemplo, la función `factorial` tiene dos patrones: `0` y `n`. Si el argumento de la función es `0`, el resultado es `1`. Si el argumento es cualquier otro número `n`, se realiza la recursión multiplicando `n` por el factorial de `(n - 1)`.
+
+El pattern matching también se puede utilizar en otras estructuras de datos, como listas y tuplas. Por ejemplo:
+
+```haskell
+head' :: [a] -> Maybe a
+head' []    = Nothing
+head' (x:_) = Just x
+```
+
+En esta función `head'`, se utiliza el pattern matching para hacer coincidir el patrón de una lista vacía `[]` y de una lista no vacía `(x:_)`. Si la lista es vacía, se devuelve `Nothing`. Si la lista tiene al menos un elemento, se devuelve `Just x`, donde `x` es el primer elemento de la lista.
+
+El pattern matching en Haskell permite escribir código más expresivo y conciso al aprovechar las características de concordancia de patrones para tratar diferentes casos de forma individualizada. Esto promueve la legibilidad y facilita la escritura de programas funcionales robustos y mantenibles.
+
+------------------------------------------------------------------------------------------------------------------------------
+Pregunta 10: Recursión en Haskell y Python (1 punto)
+Implementa una función recursiva en Haskell y en Python que calcule el factorial de un número entero positivo.
+Rpta : 
+
+```haskell
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+```
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+------------------------------------------------------------------------------------------------------------------------------
