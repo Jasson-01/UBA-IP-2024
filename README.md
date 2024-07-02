@@ -5,6 +5,7 @@ Guía en Constante Cambio
 
 Nota:
 La validación de los problemas resueltos no está verificada. Por favor, consulta con el ayudante o JTP de la cátedra.
+
 -Los "archivos de texto" en el cuadro princial, corresponden a la Guia8 del archivo Guias.
 
 Motivación:
