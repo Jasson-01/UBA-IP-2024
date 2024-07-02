@@ -1,4 +1,4 @@
-                                   Guia de estudio / IP - UBA (2024)
+                                     Guia de estudio / IP - UBA (2024)
 
 
 Guía en Constante Cambio
@@ -22,6 +22,8 @@ Te recomiendo ver estos videos de YouTube si eres principiante en Haskell y Pyth
 Haskell:
 
 Introducción a Haskell
+
+-http://aprendehaskell.es/main.html
 
 https://youtu.be/1jZqsOWS5jY?si=IBXRz2NVcpGGHw8_
 
