@@ -1,7 +1,7 @@
                                      Guia de estudio / IP - UBA (2024)
 
 
-Guía en Constante Cambio
+Guía en Constante Cambio...
 
 Nota:
 La validación de los problemas resueltos no está verificada. Por favor, consulta con el ayudante o JTP de la cátedra.
@@ -37,7 +37,7 @@ https://youtube.com/playlist?list=PLDXvhsYB9YPydrapCVAkLI4TgrO2d7Eti&si=HtxS8KWV
 
 Consejo:
 
-No te pases todo el día buscando videos tutoriales. Para aprender un lenguaje, ¡tienes que practicar!
+Termina las Guias, cada uno tiene su propio tiempo...!No te rindas!!!
 
 good luck, cowboy/cowgirl...
 
