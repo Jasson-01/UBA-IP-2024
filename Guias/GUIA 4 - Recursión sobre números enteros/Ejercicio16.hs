@@ -1,4 +1,5 @@
--- PROBLEMA A) ----------------------------------------------------------------------------------------
+--                                         ---   1ERA FORMA  ---
+-- PROBLEMA A) ---------
 
 menorDivisor :: Integer -> Integer
 menorDivisor n = aux n 2 
@@ -7,7 +8,7 @@ aux :: Integer -> Integer -> Integer
 aux m n | mod m n == 0 && n <= m  = n
         | mod m n /= 0 = aux m (n+1)
 
--- PROBLEMA B) ----------------------------------------------------------------------------------------
+-- PROBLEMA B) ----------
 
 esPrimo :: Integer -> Bool
 esPrimo 0 = False
@@ -16,7 +17,7 @@ esPrimo 2 = True
 esPrimo n | menorDivisor n > 1 && menorDivisor n /= n = False
           | otherwise = True
 
--- PROBLEMA C) ----------------------------------------------------------------------------------------
+-- PROBLEMA C) ----------
 
 sonCoprimos :: Integer -> Integer -> Bool 
 sonCoprimos n m = aux3 n m 
@@ -41,7 +42,7 @@ auxMod m (x:xs) | mod m x == 0 = True
                 | otherwise = auxMod m xs 
 
 
--- PROBLEMA D) ---------------------------------------------------------------------------------------
+-- PROBLEMA D) ---------
 
 
 nEsimoPrimo :: Integer -> Integer
@@ -55,21 +56,35 @@ auxEnesimo n k contador | n == contador = (k-1)
 
 
 
+--                                            ---   2da FORMA  ---
 
+--a)
+menorDivisor :: Integer -> Integer
+menorDivisor n = auxMenorDivisor n 2 
 
+auxMenorDivisor :: Integer -> Integer -> Integer
+auxMenorDivisor n m | mod n m == 0 = m
+                    | m * m > n = n -- Si no hay divisores menores que la raíz cuadrada de n, entonces n es primo.
+                    | mod n m /= 0 = auxMenorDivisor n (m+1)
+--b) 
+esPrimo :: Integer -> Bool 
+esPrimo n = menorDivisor n == n
+         
+--c)
+sonCoprimos :: Integer -> Integer -> Bool
+sonCoprimos a b = mcd a b == 1 
 
+--Usando el algoritmo de Euclides
+mcd :: Integer -> Integer -> Integer
+mcd a 0 = a --caso base
+mcd a b = mcd b (mod a b)
+            
+--d)
+nEsimoPrimo :: Integer -> Integer
+nEsimoPrimo n = auxNEsimoPrimo 2 n  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+auxNEsimoPrimo :: Integer -> Integer -> Integer
+auxNEsimoPrimo n contador | contador == 0 = n-1 
+                          | esPrimo n = auxNEsimoPrimo (n+1) (contador-1) 
+                          | otherwise = auxNEsimoPrimo (n+1) (contador)
 
