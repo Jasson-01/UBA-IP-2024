@@ -42,7 +42,7 @@ https://youtube.com/playlist?list=PLDXvhsYB9YPydrapCVAkLI4TgrO2d7Eti&si=HtxS8KWV
 ---------------------------------------------------------------------------------------------------------------
 Consejo:
 
-Termina las Guias, cada uno tiene su propio tiempo...!No te rindas!!!
+Cada uno tiene su propio tiempo...!No te rindas!!!
 
 good luck, cowboy/cowgirl...
 <div align="center">
