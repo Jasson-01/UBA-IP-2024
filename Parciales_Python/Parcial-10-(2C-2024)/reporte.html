@@ -1,0 +1,494 @@
+<h1>Parcial - tema1</h1>
+<p>Nota: 6.62 / 10.0 (APROBADO)</p>
+<pre><code>puntaje ej1: 2.25
+puntaje ej2: 2.25
+puntaje ej3: 0.37
+puntaje ej4: 0.75
+puntaje ej5: 1
+</code></pre>
+<h2>Datos del alumno</h2>
+<p>Nombre: ###</p>
+<p>DNI: ###</p>
+<p>LU: ###</p>
+<p>Maquina: 46-04</p>
+<h2>Enunciado</h2>
+<!doctype html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+  <link href="css/style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <style>
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .conditions {
+        margin-left: 20px;
+    }
+</style>
+</head>
+
+<body style="width: 50%;margin: 1% auto;">
+
+<div> 
+<h1> Parcial Python - Tema 1 </h1>
+
+<h2> Importante </h2>
+
+<ul>
+  <li>El parcial se aprueba con 6 puntos</li>
+  <li>Template de funciones a implementar <a href="#" onclick="forceDownload('/parcial/Template_t1.py','Template_t1.py');">acá</a><br></li>
+  <li>Lista de funciones permitidas <a href="/static/python_permitidas.html">acá</a></li>
+  <li>Para testear el código pueden usar <a href="#" onclick="forceDownload('/parcial/tema1-test.py', 'tema1-test.py')">este</a> archivo que ya cuenta con todo lo necesario para desarrollar sus propios tests (este archivo no se entrega)</li>
+</ul>
+
+Implementar las siguientes especificaciones en Python.
+
+<form name="form1" action="/submit_examen" method="post" enctype="multipart/form-data" onsubmit="return validaciones(event)">
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">1) Ejercicio 1 [2.25 puntos]</h3>
+
+<p> problema multiplos_de_primos (in <i>v</i>: seq⟨Z⟩) : Diccionario⟨Z, Z⟩ {<br>
+  &nbsp; <strong>requiere:</strong> { Los elementos de <i>v</i> son positivos }<br>
+
+  &nbsp; <strong>asegura:</strong> { Las claves de <i>res</i> son números primos, y cada valor corresponde con la cantidad de números en <i>v</i> tales que ese primo lo divide }<br>
+  &nbsp; <strong>asegura:</strong> { Si existe un número primo p tal que divide a algún número de <i>v</i>, entonces p es clave de <i>res</i> }<br>
+  &nbsp; <strong>asegura:</strong> { Los valores de <i>res</i> son positivos }<br>
+}<br>
+</p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">2) Ejercicio 2 [2.25 puntos] </h3>
+
+<p> problema longitud_mas_grande (in <i>A</i>: seq⟨seq⟨Z⟩⟩) : Z {<br>
+  &nbsp; <strong>requiere:</strong>{  Hay al menos un uno en <i>A</i>  }<br>
+  &nbsp; <strong>asegura:</strong> { Sea v la secuencia de unos más larga que está contenida en algún <i>A[i]</i> para i válido, res es igual a la longitud de v }<br>
+  }<br>
+</p>
+
+<p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">3) Ejercicio 3 [2.25 puntos]</h3>
+
+Implementar la especificación <i>resolver_cuentas</i> descrita a continuación.
+
+<p> problema resolver_cuentas(in <i>p</i>: Pila⟨string⟩ ) : seq⟨Z⟩ {<br>
+  &nbsp; <strong>requiere:</strong> { Para cada elemento x de <i>p</i> vale esta_bien_formado(x) }<br>
+  &nbsp; <strong>asegura:</strong> { <i>res[i]</i> es igual al resultado de la operación aritmética representada por el tope de la pila <i>p</i> luego de haber desapilado i elementos, para 0 <= i < longitud de <i>p</i> }<br>
+  &nbsp; <strong>asegura:</strong> { <i>res</i> tiene la misma cantidad de elementos que <i>p</i> }<br>
+  }<br>
+  </p>
+
+<p> problema esta_bien_formado(in <i>s</i>: string) : Bool {<br>
+  &nbsp; <strong>requiere:</strong> { - }<br>
+  &nbsp; <strong>asegura:</strong> { res == True <==> Cada caracter de s es '+', '-' o es un dígito; el último caracter de <i>s</i> es un dígito; no hay dos operadores consecutivos en <i>s</i> (los operadores son '+' y '-') }<br>
+  }<br>
+</p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">4) Ejercicio 4 [2.25 puntos]</h3>
+
+<p> problema dame_el_que_falta (in <i>s</i>: seq⟨ZxZ⟩): ZxZ {<br>
+  &nbsp; <strong>requiere:</strong> { El menor número que aparece en alguna tupla de <i>s</i> es igual a 1 }<br>
+  &nbsp; <strong>requiere:</strong> { Sea n el máximo número que aparece en alguna tupla de <i>s</i>, |s| = n*n-1 }<br>
+  &nbsp; <strong>requiere:</strong> { <i>s</i> no tiene tuplas repetidas }<br>
+  &nbsp; <strong>asegura:</strong> { Las compontentes de <i>res</i> son valores entre 1 y n, inclusive }<br>
+  &nbsp; <strong>asegura:</strong> { <i>res</i> no pertenece a <i>s</i> }<br>
+  }<br>
+  </p>
+
+<hr style="width: 100%;">
+  <h3 style="color:#1A5276">5) Pregunta teórica (1 punto)</h3>
+
+  <p>Conteste marcando la opción correcta.</p>
+
+      <h4 style="color:#1A5276">En el contexto de Testing de Caja Blanca ¿Qué diferencia hay entre cubrimiento de arcos y cubrimiento de decisiones o ramas? </h4>
+
+     <p>
+      <input type="radio" name="mchoice_1" id="Bopcion1" value="1" />
+          <label for="Bopcion1">No hay diferencia, ambos se refieren al mismo concepto</label> <br>
+      <input type="radio" name="mchoice_1" id="Bopcion2" value="2" />
+          <label for="Bopcion2">El cubrimiento de arcos verifica las instrucciones del programa, mientras que cubrimiento de ramas verifica cada arco del Grafo de Control de Flujo (CGF) del programa</label> <br>
+      <input type="radio" name="mchoice_1" id="Bopcion3" value="3" />
+          <label for="Bopcion3">El cubrimiento de arcos verifica los arcos del Grafo de Control de Flujo (CFG), mientras que cubrimiento de ramas verifica cada arco True o False de cada decisión lógica del programa</label> <br>
+      </p>
+
+  <hr style="width: 100%;">
+  
+</body>
+
+</html>
+
+<h2>Solucion entregada por el alumno</h2>
+<pre><code>from queue import Queue as Cola
+from queue import LifoQueue as Pila
+
+# Ejercicio 1
+def pertenece(elem:int,lista:list[int])-&gt;bool:
+    for num in lista:
+        if elem == num:
+            return True
+    return False     
+
+def lista_sin_repetidos(lista:list[int])-&gt;list[int]:
+    no_hay_repetidos:list[int] = []
+    for num01 in lista:
+        if not(pertenece(num01,no_hay_repetidos)):
+            no_hay_repetidos.append(num01)
+    return no_hay_repetidos        
+
+def es_primo(num02:int)-&gt;bool:
+    lista:list[int] = []
+    divisor:int = 1 
+    while divisor &lt;= num02:  
+      if num02 % divisor == 0:
+         lista.append(divisor)
+      divisor += 1
+
+    if len(lista) &gt; 2 or len(lista) == 1:
+        return False
+    return True
+
+def divisores_de(num:int)-&gt;list[int]:
+    divisor:int = 2
+    lista_divisores:list[int] = []
+    while divisor &lt;= num:
+        if num % divisor == 0:
+           lista_divisores.append(divisor)
+        divisor += 1 
+    return lista_divisores       
+
+def lista_de_divisores_primos(lista:list[int])-&gt;list[int]:
+    lista_nueva:list[int] = []
+    for i in range(len(lista)):
+        lista_de_divisores_comunes = divisores_de(lista[i])
+        for j in range(len(lista_de_divisores_comunes)):
+            if es_primo(lista_de_divisores_comunes[j]):
+                lista_nueva.append(lista_de_divisores_comunes[j])
+
+    return lista_nueva    
+
+def multiplos_de_primos(v: list[int]) -&gt; dict[int,int]:
+    lista_de_enteros:list[int] = v.copy()
+    formando_diccionario:dict = dict()
+    lista_de_primos_de:list[int] = lista_sin_repetidos(lista_de_divisores_primos(lista_de_enteros))
+    for primo in lista_de_primos_de:
+        contador_de_divisores:int = 0
+        for i in range(len(lista_de_enteros)):
+            if lista_de_enteros[i] % primo == 0:
+                contador_de_divisores += 1 
+        formando_diccionario[primo] = contador_de_divisores  
+    return formando_diccionario
+
+
+# Ejercicio 2
+
+def maximo(lista:list[int])-&gt;int:
+    max:int = lista[0]
+    for i in range(len(lista)):
+        if lista[i] &gt;= max:
+            max = lista[i]
+    return max 
+
+def longitud_mas_grande(A: list[list[int]]) -&gt; int:
+
+    listas_de_longitudes:list[int] = []
+    lista_de_listas_de_unos:list[list[int]] = []
+    lista_de_uno:list[int] = []
+    for fila in A:
+        for i in range(len(fila)):
+            if fila[i] == 1:
+                lista_de_uno.append(fila[i])
+            elif fila[i] != 1 and len(lista_de_uno) &gt; 0:
+                lista_de_listas_de_unos.append(lista_de_uno)
+                lista_de_uno = []
+        if len(lista_de_uno) &gt; 0:
+            lista_de_listas_de_unos.append(lista_de_uno) 
+
+    for fila02 in lista_de_listas_de_unos:
+        listas_de_longitudes.append(len(fila02))
+
+    return max(listas_de_longitudes)       
+
+# Ejercicio 3
+
+def resolver_cuentas(A: Pila[str]) -&gt; list[int]:
+    return []  
+
+
+# Ejercicio 4
+
+def pertenece_tuplas(elem:tuple[int,int],lista:list[tuple[int,int]])-&gt;bool:
+    for num in lista:
+        if elem == num:
+            return True
+    return False     
+
+def lista_numero(lista:list[tuple[int,int]])-&gt;list[int]:
+    lista_nueva = []
+    for dupla in lista:
+        lista_nueva.append(dupla[0])
+        lista_nueva.append(dupla[0])
+    return lista_nueva 
+
+def dame_el_que_falta(s: list[tuple[int,int]]) -&gt; tuple[int,int]:
+
+    dupla_faltante01 = tuple()
+    s_copia:list[tuple[int,int]] = s.copy()
+    numero_maximo:int = maximo(lista_numero(s_copia)) 
+    dupla_faltante = (numero_maximo,numero_maximo) 
+
+    if not(pertenece(dupla_faltante,s_copia)):
+       dupla_faltante01 = dupla_faltante
+    return dupla_faltante01
+
+
+
+</code></pre>
+<h2>Resultado de la compilacion</h2>
+<pre><code>
+</code></pre>
+<h2>Ejecucion de los tests</h2>
+<h3>tema1-test-ej1.py.compilacion.out</h3>
+<p>Puntaje del ej: 2.25 / 2.25</p>
+<pre><code>test_ej1_cero_elementos (__main__.Ej1Test.test_ej1_cero_elementos) ... ok
+test_ej1_dos_elementos (__main__.Ej1Test.test_ej1_dos_elementos) ... ok
+test_ej1_elementos_con_factores_repetidos (__main__.Ej1Test.test_ej1_elementos_con_factores_repetidos) ... ok
+test_ej1_elementos_con_varios_factores_repetidos (__main__.Ej1Test.test_ej1_elementos_con_varios_factores_repetidos) ... ok
+test_ej1_lista_con_un_uno (__main__.Ej1Test.test_ej1_lista_con_un_uno) ... ok
+test_ej1_muchisimos_numeros (__main__.Ej1Test.test_ej1_muchisimos_numeros) ... ok
+test_ej1_muchos_numeros (__main__.Ej1Test.test_ej1_muchos_numeros) ... ok
+test_ej1_un_elemento (__main__.Ej1Test.test_ej1_un_elemento) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+OK
+
+</code></pre>
+<h3>tema1-test-ej2.py.compilacion.out</h3>
+<p>Puntaje del ej: 2.25 / 2.25</p>
+<pre><code>test_ej2_muchas_listas (__main__.Ej1Test.test_ej2_muchas_listas) ... ok
+test_ej2_una_lista_un_uno (__main__.Ej1Test.test_ej2_una_lista_un_uno) ... ok
+test_ej2_una_lista_varias_secuencias_de_unos (__main__.Ej1Test.test_ej2_una_lista_varias_secuencias_de_unos) ... ok
+test_ej2_una_lista_varios_unos (__main__.Ej1Test.test_ej2_una_lista_varios_unos) ... ok
+test_ej2_varias_listas_max_al_final (__main__.Ej1Test.test_ej2_varias_listas_max_al_final) ... ok
+test_ej2_varias_listas_max_al_principio (__main__.Ej1Test.test_ej2_varias_listas_max_al_principio) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK
+
+</code></pre>
+<h3>tema1-test-ej3.py.compilacion.out</h3>
+<p>Puntaje del ej: 0.37 / 2.25</p>
+<pre><code>test_ej3_cuentas_que_empiezan_con_mas (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_mas) ... FAIL
+test_ej3_cuentas_que_empiezan_con_menos (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_menos) ... FAIL
+test_ej3_dos_cuentas_preserva_pila (__main__.Ej1Test.test_ej3_dos_cuentas_preserva_pila) ... FAIL
+test_ej3_pila_vacia (__main__.Ej1Test.test_ej3_pila_vacia) ... ok
+test_ej3_una_cuenta (__main__.Ej1Test.test_ej3_una_cuenta) ... FAIL
+test_ej3_varias_cuentas (__main__.Ej1Test.test_ej3_varias_cuentas) ... FAIL
+
+======================================================================
+FAIL: test_ej3_cuentas_que_empiezan_con_mas (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_mas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej3.py&quot;, line 52, in test_ej3_cuentas_que_empiezan_con_mas
+    self.assertListEqual(salida, resolver_cuentas(entrada))
+AssertionError: Lists differ: [7, 0, -2] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+7
+
+- [7, 0, -2]
++ []
+
+======================================================================
+FAIL: test_ej3_cuentas_que_empiezan_con_menos (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_menos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej3.py&quot;, line 46, in test_ej3_cuentas_que_empiezan_con_menos
+    self.assertListEqual(salida, resolver_cuentas(entrada))
+AssertionError: Lists differ: [-7, 0, 2] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+-7
+
+- [-7, 0, 2]
++ []
+
+======================================================================
+FAIL: test_ej3_dos_cuentas_preserva_pila (__main__.Ej1Test.test_ej3_dos_cuentas_preserva_pila)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej3.py&quot;, line 35, in test_ej3_dos_cuentas_preserva_pila
+    self.assertListEqual(salida, resolver_cuentas(entrada))
+AssertionError: Lists differ: [12, 6] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+12
+
+- [12, 6]
++ []
+
+======================================================================
+FAIL: test_ej3_una_cuenta (__main__.Ej1Test.test_ej3_una_cuenta)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej3.py&quot;, line 29, in test_ej3_una_cuenta
+    self.assertListEqual(salida, resolver_cuentas(entrada))
+AssertionError: Lists differ: [2] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+2
+
+- [2]
+?  -
+
++ []
+
+======================================================================
+FAIL: test_ej3_varias_cuentas (__main__.Ej1Test.test_ej3_varias_cuentas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej3.py&quot;, line 41, in test_ej3_varias_cuentas
+    self.assertListEqual(salida, resolver_cuentas(entrada))
+AssertionError: Lists differ: [0, 46, 6, -5, 12, 6] != []
+
+First list contains 6 additional elements.
+First extra element 0:
+0
+
+- [0, 46, 6, -5, 12, 6]
++ []
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+FAILED (failures=5)
+
+</code></pre>
+<h3>tema1-test-ej4.py.compilacion.out</h3>
+<p>Puntaje del ej: 0.75 / 2.25</p>
+<pre><code>test_ej4_falta_el_mas_chico (__main__.Ej1Test.test_ej4_falta_el_mas_chico) ... FAIL
+test_ej4_falta_el_mas_grande (__main__.Ej1Test.test_ej4_falta_el_mas_grande) ... ok
+test_ej4_lista_mas_larga (__main__.Ej1Test.test_ej4_lista_mas_larga) ... FAIL
+test_ej4_lista_simple (__main__.Ej1Test.test_ej4_lista_simple) ... ok
+test_ej4_test_grande_desordenado (__main__.Ej1Test.test_ej4_test_grande_desordenado) ... FAIL
+test_ej4_test_grande_ordenado (__main__.Ej1Test.test_ej4_test_grande_ordenado) ... FAIL
+
+======================================================================
+FAIL: test_ej4_falta_el_mas_chico (__main__.Ej1Test.test_ej4_falta_el_mas_chico)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej4.py&quot;, line 39, in test_ej4_falta_el_mas_chico
+    self.assertTupleEqual(salida, dame_el_que_falta(entrada))
+AssertionError: Tuples differ: (1, 1) != ()
+
+First tuple contains 2 additional elements.
+First extra element 0:
+1
+
+- (1, 1)
++ ()
+
+======================================================================
+FAIL: test_ej4_lista_mas_larga (__main__.Ej1Test.test_ej4_lista_mas_larga)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej4.py&quot;, line 29, in test_ej4_lista_mas_larga
+    self.assertTupleEqual(salida, dame_el_que_falta(entrada))
+AssertionError: Tuples differ: (2, 1) != ()
+
+First tuple contains 2 additional elements.
+First extra element 0:
+2
+
+- (2, 1)
++ ()
+
+======================================================================
+FAIL: test_ej4_test_grande_desordenado (__main__.Ej1Test.test_ej4_test_grande_desordenado)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej4.py&quot;, line 62, in test_ej4_test_grande_desordenado
+    self.assertTupleEqual(salida, dame_el_que_falta(entrada))
+AssertionError: Tuples differ: (8, 3) != ()
+
+First tuple contains 2 additional elements.
+First extra element 0:
+8
+
+- (8, 3)
++ ()
+
+======================================================================
+FAIL: test_ej4_test_grande_ordenado (__main__.Ej1Test.test_ej4_test_grande_ordenado)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/davila_bustamante_jasson_aldayr_96143620/tema1-test-ej4.py&quot;, line 55, in test_ej4_test_grande_ordenado
+    self.assertTupleEqual(salida, dame_el_que_falta(entrada))
+AssertionError: Tuples differ: (5, 7) != ()
+
+First tuple contains 2 additional elements.
+First extra element 0:
+5
+
+- (5, 7)
++ ()
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+FAILED (failures=4)
+
+</code></pre>
+<h3>mchoice.json-ej5.compilacion.out</h3>
+<p>Puntaje del ej: 1 / 1</p>
+<pre><code>mchoice ej5: respuesta del alumno=3, respuesta correcta=3
+
+Ran 1 test in 0 seconds
+
+OK
+
+</code></pre>
+<p>FIN</p>
