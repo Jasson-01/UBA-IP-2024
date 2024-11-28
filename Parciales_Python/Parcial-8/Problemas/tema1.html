@@ -139,59 +139,7 @@ En este diccionario deben aparecer solo aquellas enfermedades infecciosas cuya p
 
 
   <hr style="width: 100%;">
-  <h3 style="color:#1A5276">Adjunta el archivo con tu solución:</h3>
-  <p><b style="color:red">Solo se puede adjuntar 1 archivo de extensión .py. En caso de haber desarrollado tests propios, no deben ser entregados.</b></p>
   
-  <label for="archivo">Seleccionar archivo a enviar:</label>
-  <input type="file" id="archivo" name="archivo" required accept=".py,text/x-python"/>
-
-  <input type="submit" value="Enviar"
-        style= "background-color: #1A5276; border-radius: 5px;
-                margin-top:10px;padding: 10px 150px;color: #FFFFFF;
-                font-size: 20px;cursor: pointer; width:100%" >
-
-</form>
-</div>
-<script>
-  function validaciones(event) {
-    var confirmacion = confirm("Confirmo que revisé que compila el código, seleccioné las respuestas multiple choice y que quiero entregar mi examen");
-    if (!confirmacion) {
-        event.preventDefault();
-        event.returnValue = false;
-        return false;
-      }
-      event.returnValue = true;
-      return true;
-  }
-
-// registro una funcion para mostrar el archivo cuando se adjunta.
-// de esa forma evitamos que se adjunten otros archivos por error
-document
-  .getElementById('archivo')
-  .addEventListener(
-      'change',
-      function () {
-          var fr = new FileReader();
-          fr.onload = function () {
-              alert(this.result);
-          };
-          fr.readAsText(this.files[0]);
-      }
-  );
-
-// para forzar a bajar el template de hunit y que no se pueda abrir en un nuevo tab
-// (el browser intenta mostrar el codigo como HTML y el formato se ve raro)
-function forceDownload(url, filename) {
-  fetch(url).then(function(t) {
-    return t.blob().then((b) => {
-      var a = document.createElement("a");
-      a.href = URL.createObjectURL(b);
-      a.setAttribute("download", filename);
-      a.click();
-    });
-  });
-}
-</script>
 </body>
 
 </html>
