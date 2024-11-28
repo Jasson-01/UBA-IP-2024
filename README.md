@@ -3,22 +3,24 @@
 
 Guía en Constante Cambio...
 
-Nota:
+NOTAS:
 La validación de los problemas resueltos no está verificada. Por favor, consulta con el ayudante o JTP de la cátedra.
 
 -Los "archivos de texto" en el cuadro princial, corresponden a la Guia8 del archivo Guias.
 
 Parciales y Guias resueltas en: https://www.cubawiki.com.ar/index.php/Introducci%C3%B3n_a_la_Programaci%C3%B3n
 
-Motivación:
+MOTIVACION:
 
-1ero -> https://youtu.be/gW6sw96OZeg?si=6bSZb9LMuNFkHRiL 
+1ero -> https://youtu.be/Au8mW-Ps2e8?si=GYjC-Nbeypspxmms
 
-2do ->  https://youtu.be/9bxkH3M7BR4?si=ayQY3yH7-YXmZY_b 
+2do -> https://youtu.be/gW6sw96OZeg?si=6bSZb9LMuNFkHRiL 
 
-3ero -> https://youtu.be/qkPR0gBAH9g?si=8Sg-k9V1uMbns283 
+3ro ->  https://youtu.be/9bxkH3M7BR4?si=ayQY3yH7-YXmZY_b 
 
-Recomendaciones:
+4to -> https://youtu.be/qkPR0gBAH9g?si=8Sg-k9V1uMbns283 
+
+RECOMENDACIONES:
 Te recomiendo ver estos videos de YouTube si eres principiante en Haskell y Python:
 
 Haskell:
