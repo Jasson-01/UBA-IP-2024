@@ -4,12 +4,14 @@
 Guía en Constante Cambio...
 
 NOTAS:
+
 La validación de los problemas resueltos no está verificada. Por favor, consulta con el ayudante o JTP de la cátedra.
 
 -Los "archivos de texto" en el cuadro princial, corresponden a la Guia8 del archivo Guias.
 
 Parciales y Guias resueltas en: https://www.cubawiki.com.ar/index.php/Introducci%C3%B3n_a_la_Programaci%C3%B3n
 
+---------------------------------------------------------------------------------------------------------------
 MOTIVACION:
 
 1ero -> https://youtu.be/Au8mW-Ps2e8?si=GYjC-Nbeypspxmms
@@ -20,6 +22,7 @@ MOTIVACION:
 
 4to -> https://youtu.be/qkPR0gBAH9g?si=8Sg-k9V1uMbns283 
 
+---------------------------------------------------------------------------------------------------------------
 RECOMENDACIONES:
 Te recomiendo ver estos videos de YouTube si eres principiante en Haskell y Python:
 
@@ -36,7 +39,7 @@ Python:
 Lista de Reproducción de Python:
 https://youtube.com/playlist?list=PLDXvhsYB9YPydrapCVAkLI4TgrO2d7Eti&si=HtxS8KWVHmMnm9L8
 
-
+---------------------------------------------------------------------------------------------------------------
 Consejo:
 
 Termina las Guias, cada uno tiene su propio tiempo...!No te rindas!!!
