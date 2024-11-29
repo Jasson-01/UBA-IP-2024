@@ -1,6 +1,6 @@
 import unittest
 from queue import LifoQueue as Pila
-from solucion import resolver_cuentas
+from Solucion002 import resolver_cuentas
 
 '''
 Ayudamemoria: entre los métodos para testear están los siguientes:
@@ -11,7 +11,7 @@ Ayudamemoria: entre los métodos para testear están los siguientes:
     self.assertIn(a, b)    -> testea que a esté en b (siendo b una lista o tupla)
 '''
 
-class Ej1Test():
+class Ej1Test(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(Ej1Test, self).__init__(*args, **kwargs)
         self.method = resolver_cuentas

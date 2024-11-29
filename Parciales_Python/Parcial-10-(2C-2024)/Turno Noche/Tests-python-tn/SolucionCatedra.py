@@ -5,7 +5,7 @@ from typing import TypeVar
 T = TypeVar('T')
 
 
-# Ejercicio 1
+# Ejercicio 1 ----------------------------------------------------------------------------
 def pertenece(cadena: list[T], elem: T) -> bool:
     for i in cadena:
         if i == elem:
@@ -57,20 +57,6 @@ def longitud_mas_grande(m: list[list[int]]) -> int:
 
 
 # Ejercicio 3
-def resolver_cuentas(p: Pila [str]) -> list[str]:
-    p_copia: Pila[str] = Pila()
-    res: list[str] = []
-
-    while not p.empty():
-        cuenta:str = p.get()
-        p_copia.put(cuenta)
-        res.append(calcular(cuenta)) 
-
-    #restauro pila
-    while not p_copia.empty():
-        p.put(p_copia.get())
-    return res
-
 def calcular(cuenta: str):
     res = 0
     numero_actual = 0
@@ -91,6 +77,26 @@ def calcular(cuenta: str):
     # agrego el último número al resultado
     res += signo * numero_actual
     return res
+
+def resolver_cuentas(p: Pila [str]) -> list[str]:
+    p_copia: Pila[str] = Pila()
+    res: list[str] = []
+
+    while not p.empty():
+        cuenta:str = p.get()
+        p_copia.put(cuenta)
+        res.append(calcular(cuenta)) 
+
+    #restauro pila
+    while not p_copia.empty():
+        p.put(p_copia.get())
+    return res
+
+# pila002 = Pila()
+# pila002.put("8+4-2+7")
+# op = resolver_cuentas(pila002)
+# print(op.queue)
+
 
 
 # Ejercicio 4

@@ -1,5 +1,5 @@
 import unittest
-from solucion import dame_el_que_falta
+from Solucion002 import dame_el_que_falta
 from random import shuffle
 
 '''
@@ -11,7 +11,7 @@ Ayudamemoria: entre los métodos para testear están los siguientes:
     self.assertIn(a, b)    -> testea que a esté en b (siendo b una lista o tupla)
 '''
 
-class Ej1Test():
+class Ej1Test(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(Ej1Test, self).__init__(*args, **kwargs)
         self.method = dame_el_que_falta
