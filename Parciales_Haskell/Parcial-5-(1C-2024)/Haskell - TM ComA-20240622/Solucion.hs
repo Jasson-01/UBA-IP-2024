@@ -9,7 +9,7 @@ hayQueCodificar letra ((u,v):xs) = letra == u || hayQueCodificar letra xs
 --Ejercicio 2
 cuantasVecesHayQueCodificar :: Char -> [Char] -> [(Char,Char)] -> Int
 cuantasVecesHayQueCodificar a frase mapeo | not (hayQueCodificar a mapeo) = 0
-                                           | otherwise = apariciones a frase
+                                          | otherwise = apariciones a frase
 apariciones :: Char -> [Char] -> Int
 apariciones _ [] = 0
 apariciones letra (x:xs) | letra == x = 1 + apariciones letra xs
